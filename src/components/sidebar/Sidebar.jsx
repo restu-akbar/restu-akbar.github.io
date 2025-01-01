@@ -84,7 +84,7 @@ const Sidebar = (props) => {
 
             <div className={toggle ? 'nav__toggle nav__toggle-open' : 'nav__toggle'} onClick={() => showMenu(!toggle)}>
                 <RiMenu2Line />
-            </div>
+            </div>            
         </>
     );
 };
