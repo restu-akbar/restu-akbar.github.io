@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/web-portfolio/static/css/main.8430e1e5.css",
-    "main.js": "/web-portfolio/static/js/main.763b6825.js",
+    "main.js": "/web-portfolio/static/js/main.2e63ca9f.js",
     "static/media/profil.png": "/web-portfolio/static/media/profil.e405b6136497169d03f0.png",
     "static/media/work1.png": "/web-portfolio/static/media/work1.6a19366c05149271c505.png",
     "static/media/profil-2.jpg": "/web-portfolio/static/media/profil-2.e5aebe8d1671d1851d82.jpg",
-    "static/media/Restu Akbar-CV.pdf": "/web-portfolio/static/media/Restu Akbar-CV.e02fb5e1bf1e6d56abbd.pdf",
+    "static/media/Restu Akbar-CV.pdf": "/web-portfolio/static/media/Restu Akbar-CV.3e37ea60f6c576256d11.pdf",
     "static/media/work2.png": "/web-portfolio/static/media/work2.383d8aef82a75baaf52a.png",
     "static/media/work3.png": "/web-portfolio/static/media/work3.ce3d616baf65bdf77765.png",
     "static/media/service-3.svg": "/web-portfolio/static/media/service-3.5ce3e21e961c980ca809977cf695357b.svg",
@@ -17,10 +17,10 @@
     "static/media/light-logo.svg": "/web-portfolio/static/media/light-logo.060bc1a33908778a0f6c21523c22a8dd.svg",
     "index.html": "/web-portfolio/index.html",
     "main.8430e1e5.css.map": "/web-portfolio/static/css/main.8430e1e5.css.map",
-    "main.763b6825.js.map": "/web-portfolio/static/js/main.763b6825.js.map"
+    "main.2e63ca9f.js.map": "/web-portfolio/static/js/main.2e63ca9f.js.map"
   },
   "entrypoints": [
     "static/css/main.8430e1e5.css",
-    "static/js/main.763b6825.js"
+    "static/js/main.2e63ca9f.js"
   ]
 }
