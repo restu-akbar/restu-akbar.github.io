@@ -1,4 +1,3 @@
-/*=============== Google Fonts ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;600;700;800;900&display=swap");
 
 :root {
@@ -10,8 +9,8 @@
   --container-color: #fff;
   --border-color: rgba(0, 0, 0, 0.05);
 
-  /*=============== Font and Typohraphy ===============*/
-  --body-font: "Noto Sans", san-serif;
+  /*=============== Font and Typography ===============*/
+  --body-font: "Noto Sans", sans-serif;
   --h1-font-size: 2.25rem;
   --h2-font-size: 1.5rem;
   --h3-font-size: 1.25rem;
@@ -31,13 +30,13 @@
   --border-radius: 20px;
 }
 
+/*=============== Dark Mode Colors ===============*/
 [data-theme="dark"] {
   --first-color: hsl(353, 100%, 65%);
   --title-color: hsl(218, 11%, 69%);
   --text-color: hsl(0, 0%, 100%);
   --body-color: hsl(0, 0%, 12.5%);
   --container-color: hsl(0, 0%, 22%);
-
   --shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
   --border-color: rgba(167, 174, 185, 0.1);
 }
@@ -180,4 +179,25 @@ img {
 
 .btn:hover {
   animation: button-push 0.3s linear 1;
+}
+
+/*=============== Link Styles ===============*/
+.link-text {
+  text-decoration: none;
+  transition: color 0.3s ease;
+  color: var(--title-color);
+}
+
+/* Light Mode Link */
+.link-text:hover {
+  color: var(--first-color);
+}
+
+/* Dark Mode Link */
+[data-theme="dark"] .link-text {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .link-text:hover {
+  color: var(--first-color);
 }

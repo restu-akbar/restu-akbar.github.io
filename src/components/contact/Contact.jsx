@@ -107,7 +107,7 @@ const Contact = (props) => {
                 </form>
                 <ToastContainer position="bottom-right" theme={props.theme} />
             </div>
-            <p className="foot">Website template by <a href="https://github.com/GregSithole" target="_blank">Greg Sithole</a></p>
+            <p className="foot">Website template by <a href="https://github.com/GregSithole" target="_blank" rel="noreferrer">Greg Sithole</a></p>
         </section>
     );
 };

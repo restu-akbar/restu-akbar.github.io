@@ -39,10 +39,16 @@
   text-align: justify;
 }
 
-.about__list {
+.about__list-wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.about__list {
+  list-style: none;
+  padding: 0;
 }
 
 .about__list li {
@@ -58,7 +64,7 @@
 
 .about__skills {
   row-gap: 1.25rem;
-  margin-top: 1.25rem;;
+  margin-top: 1.25rem;
 }
 
 .skills__titles {
@@ -90,19 +96,19 @@
   display: block;
 }
 
-.development {
-  width: 90%;
-  background-color: rgb(255, 209, 92);
-}
-
-.ui__design {
-  width: 80%;
+.full {
+  width: 100%;
   background-color: rgb(255, 76, 96);
 }
 
-.photography {
+.development {
+  width: 90%;
+  background-color: rgb(115, 0, 255);
+}
+
+.so__so {
   width: 60%;
-  background-color: rgb(108, 108, 299);
+  background-color: rgb(255, 209, 92);
 }
 
 .about__boxes {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Resume.css";
+import "../../index.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Button from "./Button";
 
@@ -10,7 +11,7 @@ const Resume = () => {
 
     return (
         <section className="resume container section" id="resume">
-            <h2 className="section__title">Education</h2>
+            <h2 className="section__title">Education and Experience</h2>
 
             <div className="resume__container">
                 <Tabs
@@ -32,11 +33,11 @@ const Resume = () => {
                     </TabList>
 
                     {WorkExperience.map((experience) => {
-                        const { id, company, yearsActive, title, information } = experience;
+                        const { id, company, yearsActive, title, information, link } = experience;
                         return (
                             <TabPanel className="tab__panel" key={`panel-${id}`}>
                                 <h2 className="tab__panel-title">
-                                    {title} @ {company}
+                                    {title} @ <a className="link-text" href={link} target="_blank" rel="noreferrer">{company}</a>
                                 </h2>
                                 <p className="tab__panel-subtitle">{yearsActive}</p>
                                 <ul className="tab__panel-list">

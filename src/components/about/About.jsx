@@ -18,19 +18,22 @@ const About = () => {
                 <div className="about__data grid">
                     <div className="about__info">
                         <p className="about__description">
-                            Hello! I'm Restu, and I'm based in Bandung, Indonesia. I'm currently studying Software Engineering at Bandung State Polytechnic.<br /><br />These days, my primary focus is on enhancing my portfolio by creating more impactful projects to feature here, while continuously learning and evolving as a passionate student.
+                            Hello! I'm Restu, and I'm based in Bandung, Indonesia. I'm currently studying Software Engineering at Politeknik Negeri Bandung.<br /><br />These days, my primary focus is on enhancing my portfolio by creating more impactful projects to feature here, while continuously learning and evolving as a passionate student.
                             <br />I’m always eager to explore new technologies, tackle challenges, and expand my skill set to make meaningful contributions to the tech world.
 
                             <br /><br />Here are some of the technologies I’ve been diving into recently:
                         </p>
-                        <ul className="about__list">
-                            <li>JavaScript (ES6+)</li>
-                            <li>Laravel</li>
-                            <li>NodeJs</li>
-                            <li>ExpressJs</li>
-                            <li>PostgreSQL</li>
-                            <li>MongoDB</li>
-                        </ul>
+                        <div className="about__list-wrapper">
+                            {Object.entries(groupedSkills).map(([category, items]) => (
+                                <ul key={category} className="about__list">
+                                    {items.map((item) => (
+                                        <li key={item}>{item}</li>
+                                    ))}
+                                </ul>
+                            ))}
+                        </div>
+
+
                         <button className="btn" onClick={downloadResume}>Download CV</button>
                     </div>
 
@@ -38,6 +41,19 @@ const About = () => {
                         <div className="skills__data">
                             <div className="skills__titles">
                                 <h3 className="skills__name">Software Implementation (Coding)</h3>
+                                <span className="skills__number">100%</span>
+                            </div>
+
+                            <div className="skills__bar">
+                                <span className="skills__percentage full">
+
+                                </span>
+                            </div>
+                        </div>
+
+                        <div className="skills__data">
+                            <div className="skills__titles">
+                                <h3 className="skills__name">Software Design and Documentation</h3>
                                 <span className="skills__number">90%</span>
                             </div>
 
@@ -50,25 +66,12 @@ const About = () => {
 
                         <div className="skills__data">
                             <div className="skills__titles">
-                                <h3 className="skills__name">Software Design and Documentation</h3>
-                                <span className="skills__number">80%</span>
-                            </div>
-
-                            <div className="skills__bar">
-                                <span className="skills__percentage ui__design">
-
-                                </span>
-                            </div>
-                        </div>
-
-                        <div className="skills__data">
-                            <div className="skills__titles">
                                 <h3 className="skills__name">Software Testing</h3>
                                 <span className="skills__number">60%</span>
                             </div>
 
                             <div className="skills__bar">
-                                <span className="skills__percentage photography">
+                                <span className="skills__percentage so__so">
                                 </span>
                             </div>
                         </div>
@@ -80,5 +83,27 @@ const About = () => {
         </section>
     )
 }
+
+const skills = [
+    { name: "JavaScript", category: "language" },
+    { name: "TypeScript", category: "language" },
+    { name: "Kotlin", category: "language" },
+    { name: "NodeJs", category: "framework" },
+    { name: "ExpressJs", category: "framework" },
+    { name: "NestJs", category: "framework" },
+    { name: "Laravel", category: "framework" },
+    { name: "Ktor (Kotlin Server Side)", category: "framework" },
+    { name: "PostgreSQL", category: "database" },
+    { name: "MongoDB", category: "database" },
+    { name: "MySQL", category: "database" },
+];
+
+const groupedSkills = skills.reduce((acc, skill) => {
+    acc[skill.category] = acc[skill.category] || [];
+    acc[skill.category].push(skill.name);
+    return acc;
+}, {});
+
+
 
 export default About
