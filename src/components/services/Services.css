@@ -1,6 +1,8 @@
 .services__container {
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 1.875rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+  gap: 1.875rem; /* jarak antar kartu */
+  justify-content: center;
 }
 
 .services__card {
@@ -15,6 +17,7 @@
   transform: translateY(-10px);
 }
 
+/* Warna spesifik untuk kartu */
 .services__card:nth-child(1) {
   background-color: rgb(108, 108, 229);
   box-shadow: 0 5px 20px 0 rgb(108, 108, 229 / 50%);
@@ -28,6 +31,12 @@
 .services__card:nth-child(3) {
   background-color: rgb(249, 123, 139);
   box-shadow: 0 5px 20px 0 rgb(249, 123, 139 / 50%);
+}
+
+/* Tambahkan style untuk kartu ke-4 agar punya warna berbeda */
+.services__card:nth-child(4) {
+  background-color: rgb(100, 200, 150);
+  box-shadow: 0 5px 20px 0 rgb(100, 200, 150 / 50%);
 }
 
 .services__img {
@@ -44,10 +53,7 @@
   color: #f8f9fa;
 }
 
-.services__card:nth-child(2) .services__title {
-  color: var(--title-color);
-}
-
+.services__card:nth-child(2) .services__title,
 .services__card:nth-child(2) .services__description {
   color: var(--title-color);
 }
@@ -57,24 +63,15 @@
   color: var(--body-color);
 }
 
+/* Responsif */
 @media screen and (max-width: 1024px) {
   .services__container {
-    grid-template-columns: repeat(2, 330px);
-    justify-content: center;
-    row-gap: 1.875rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 768px) {
   .services__container {
-    grid-template-columns: 310px;
-    justify-content: center;
-    row-gap: 1.875rem;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .services__container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* jadi 1 kolom di mobile */
   }
 }

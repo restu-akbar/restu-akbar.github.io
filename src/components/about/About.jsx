@@ -87,6 +87,7 @@ const About = () => {
 const skills = [
     { name: "JavaScript", category: "language" },
     { name: "TypeScript", category: "language" },
+    { name: "PHP", category: "language" },
     { name: "Kotlin", category: "language" },
     { name: "NodeJs", category: "framework" },
     { name: "ExpressJs", category: "framework" },
