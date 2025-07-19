@@ -1,27 +1,30 @@
 {
   "files": {
-    "main.css": "/web-portfolio/static/css/main.b15afde7.css",
-    "main.js": "/web-portfolio/static/js/main.deda168d.js",
-    "static/media/work3.png": "/web-portfolio/static/media/work3.0c4531971c4ec88158cc.png",
+    "main.css": "/web-portfolio/static/css/main.d769a52b.css",
+    "main.js": "/web-portfolio/static/js/main.28a15e6a.js",
+    "static/media/geo.png": "/web-portfolio/static/media/geo.0c4531971c4ec88158cc.png",
+    "static/media/sspm.png": "/web-portfolio/static/media/sspm.995759a175b71dc8cb6f.png",
+    "static/media/srikandi.png": "/web-portfolio/static/media/srikandi.f2ecdb794825c2b647a1.png",
     "static/media/profil.png": "/web-portfolio/static/media/profil.e405b6136497169d03f0.png",
     "static/media/profil-2.jpg": "/web-portfolio/static/media/profil-2.e5aebe8d1671d1851d82.jpg",
     "static/media/Restu Akbar-CV.pdf": "/web-portfolio/static/media/Restu Akbar-CV.ed6d8f13be88c4a031db.pdf",
-    "static/media/work1.png": "/web-portfolio/static/media/work1.c3bb69456cb7faa70c02.png",
-    "static/media/work5.png": "/web-portfolio/static/media/work5.8fff684031564b0eb827.png",
-    "static/media/work4.png": "/web-portfolio/static/media/work4.140aa13196b96c09c25c.png",
-    "static/media/service-3.svg": "/web-portfolio/static/media/service-3.5ce3e21e961c980ca809977cf695357b.svg",
-    "static/media/service-2.svg": "/web-portfolio/static/media/service-2.360040db94db03a3ca860042e67c4912.svg",
-    "static/media/service-1.svg": "/web-portfolio/static/media/service-1.e6772bd53c577af49129f09d020b488f.svg",
-    "static/media/logo.svg": "/web-portfolio/static/media/logo.e3a24721fc1de71803a80941b5611f71.svg",
-    "static/media/dots-bg-dark.svg": "/web-portfolio/static/media/dots-bg-dark.3fb919e37bd3f4cdeed2.svg",
-    "static/media/dots-bg.svg": "/web-portfolio/static/media/dots-bg.f9af2a6a4e3508808a05.svg",
-    "static/media/light-logo.svg": "/web-portfolio/static/media/light-logo.060bc1a33908778a0f6c21523c22a8dd.svg",
+    "static/media/pkm.png": "/web-portfolio/static/media/pkm.c3bb69456cb7faa70c02.png",
+    "static/media/exam.png": "/web-portfolio/static/media/exam.8fff684031564b0eb827.png",
+    "static/media/poker.png": "/web-portfolio/static/media/poker.140aa13196b96c09c25c.png",
+    "static/media/service-2.svg": "/web-portfolio/static/media/service-2.05ef6be93979697986d627045655a978.svg",
+    "static/media/service-1.svg": "/web-portfolio/static/media/service-1.0f89774a12c093c4be05a3fdb156f497.svg",
+    "static/media/service-3.svg": "/web-portfolio/static/media/service-3.bb25474569d433b8e5c7d84722afb079.svg",
+    "static/media/logo.svg": "/web-portfolio/static/media/logo.bdf08059527dc09e6d4f42d7c9d78b22.svg",
+    "static/media/dots-bg-dark.svg": "/web-portfolio/static/media/dots-bg-dark.3a79e4a2778386f14af1.svg",
+    "static/media/dots-bg.svg": "/web-portfolio/static/media/dots-bg.aa8289c51cd678b8cd47.svg",
+    "static/media/service-4.svg": "/web-portfolio/static/media/service-4.5f1f9c3ce79d5ce910bbc586489a0fc5.svg",
+    "static/media/light-logo.svg": "/web-portfolio/static/media/light-logo.533c20f31bf65c1c1d8c3a6d407f5304.svg",
     "index.html": "/web-portfolio/index.html",
-    "main.b15afde7.css.map": "/web-portfolio/static/css/main.b15afde7.css.map",
-    "main.deda168d.js.map": "/web-portfolio/static/js/main.deda168d.js.map"
+    "main.d769a52b.css.map": "/web-portfolio/static/css/main.d769a52b.css.map",
+    "main.28a15e6a.js.map": "/web-portfolio/static/js/main.28a15e6a.js.map"
   },
   "entrypoints": [
-    "static/css/main.b15afde7.css",
-    "static/js/main.deda168d.js"
+    "static/css/main.d769a52b.css",
+    "static/js/main.28a15e6a.js"
   ]
 }
