@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">Personal portfolio website <a href="https://akbarst3.github.io/web-portfolio/." target="_blank">Restu Akbar</a>.</h4>
+<h4 align="center">Personal portfolio website <a href="https://restu-akbar.github.io" target="_blank">Restu Akbar</a>.</h4>
 
 <br>
 
@@ -15,3 +15,4 @@
 This website uses the template made by:
 
 - [GregSithole](https://github.com/GregSithole)
+
