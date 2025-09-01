@@ -195,3 +195,18 @@
     align-items: center;
   }
 }
+
+.resume-buttons {
+  display: flex;
+  gap: 12px; /* jarak antar tombol */
+}
+
+.btn-id {
+  background-color: #ff0000;
+  color: white;
+}
+
+.btn-en {
+  background-color: #08538c;
+  color: white;
+}

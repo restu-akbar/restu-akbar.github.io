@@ -1,12 +1,14 @@
 import React from "react";
 import "./About.css";
 import Image from "../../assets/profil-2.jpg";
-import Resume from "../../assets/Restu Akbar-CV.pdf";
+import ResumeID from "../../assets/Restu Akbar-CV-ID.pdf";
+import ResumeEN from "../../assets/Restu Akbar-CV-EN.pdf";
 import AboutBox from "./AboutBox";
 
 const About = () => {
-  const downloadResume = async () => {
-    window.open(Resume, "_blank");
+  const downloadResume = async (lang) => {
+    const file = lang === "id" ? ResumeID : ResumeEN;
+    window.open(file, "_blank");
   };
   return (
     <section className="about container section" id="about">
@@ -45,9 +47,20 @@ const About = () => {
               ))}
             </div>
 
-            <button className="btn" onClick={downloadResume}>
-              Download CV
-            </button>
+            <div className="resume-buttons">
+              <button
+                className="btn btn-id"
+                onClick={() => downloadResume("id")}
+              >
+                Download Resume (ID)
+              </button>
+              <button
+                className="btn btn-en"
+                onClick={() => downloadResume("en")}
+              >
+                Download Resume (EN)
+              </button>
+            </div>
           </div>
 
           <div className="about__skills grid">
