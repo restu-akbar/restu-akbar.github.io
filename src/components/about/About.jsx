@@ -110,16 +110,13 @@ const About = () => {
 };
 
 const skills = [
-  { name: "JavaScript", category: "language" },
-  { name: "TypeScript", category: "language" },
-  { name: "PHP", category: "language" },
-  { name: "Kotlin", category: "language" },
-  { name: "Selenium Python", category: "language" },
   { name: "NodeJs", category: "framework" },
   { name: "ExpressJs", category: "framework" },
   { name: "NestJs", category: "framework" },
   { name: "Laravel", category: "framework" },
+  { name: "Kotlin (Jetpack Compose Multiplatform)", category: "framework" },
   { name: "Ktor (Kotlin Server Side)", category: "framework" },
+  { name: "Selenium (Python)", category: "framework" },
   { name: "PostgreSQL", category: "database" },
   { name: "MongoDB", category: "database" },
   { name: "MySQL", category: "database" },

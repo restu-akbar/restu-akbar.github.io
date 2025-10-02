@@ -160,11 +160,12 @@
 
 @media screen and (max-width: 768px) {
   .about__container {
-    grid-template-columns: 350px;
+    grid-template-columns: 1fr;
   }
 
   .about__data::before {
-    left: 47%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .about__data {
@@ -177,11 +178,23 @@
     row-gap: 1.5rem;
     justify-content: center;
   }
+  .about__img {
+    width: clamp(140px, 50vw, 220px);
+    aspect-ratio: 1 / 1;
+    height: auto;
+    justify-self: center;
+  }
+  .resume-buttons {
+    flex-wrap: wrap;
+  }
+  .resume-buttons .btn {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 576px) {
   .about__container {
-    grid-template-columns: 320px;
+    grid-template-columns: 1fr;
   }
 }
 
