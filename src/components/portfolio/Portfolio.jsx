@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   RiLink,
@@ -20,7 +20,6 @@ const Portfolio = () => {
   const [items, setItems] = useState(sortByIdDesc(Menu));
   const [activeFilter, setActiveFilter] = useState(0);
 
-  // NEW: state untuk modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -32,45 +31,44 @@ const Portfolio = () => {
     setItems(sortByIdDesc(updatedItems));
   };
 
-  // NEW: buka modal
-  const openModal = (item) => {
+  const openModal = useCallback((item) => {
     setSelectedItem(item);
     setCurrentSlide(0);
     setIsModalOpen(true);
-    document.body.style.overflow = "hidden"; // lock scroll
-  };
+    document.body.style.overflow = "hidden";
+  }, []);
 
-  // NEW: tutup modal
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsModalOpen(false);
     setSelectedItem(null);
     setCurrentSlide(0);
-    document.body.style.overflow = ""; // restore scroll
-  };
+    document.body.style.overflow = "";
+  }, []);
 
-  // NEW: keyboard navigation
+  const galleryLen = selectedItem?.gallery?.length ?? 0;
+
+  const nextSlide = useCallback(() => {
+    if (galleryLen === 0) return;
+    setCurrentSlide((s) => (s + 1) % galleryLen);
+  }, [galleryLen]);
+
+  const prevSlide = useCallback(() => {
+    if (galleryLen === 0) return;
+    setCurrentSlide((s) => (s - 1 + galleryLen) % galleryLen);
+  }, [galleryLen]);
+
   useEffect(() => {
     if (!isModalOpen) return;
+
     const onKeyDown = (e) => {
       if (e.key === "Escape") closeModal();
       if (e.key === "ArrowRight") nextSlide();
       if (e.key === "ArrowLeft") prevSlide();
     };
+
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [isModalOpen, currentSlide, selectedItem]);
-
-  const nextSlide = () => {
-    if (!selectedItem?.gallery?.length) return;
-    setCurrentSlide((s) => (s + 1) % selectedItem.gallery.length);
-  };
-  const prevSlide = () => {
-    if (!selectedItem?.gallery?.length) return;
-    setCurrentSlide(
-      (s) =>
-        (s - 1 + selectedItem.gallery.length) % selectedItem.gallery.length,
-    );
-  };
+  }, [isModalOpen, nextSlide, prevSlide, closeModal]);
 
   return (
     <section className="portfolio container section" id="portfolio">
@@ -248,6 +246,19 @@ const ModalGallery = ({
             </ul>
           </div>
         )}
+        {item.url ? (
+          <div className="modal__contribs">
+            <h4>Project Url</h4>
+            <a
+              className="modal__desc link-text"
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {item.url}
+            </a>
+          </div>
+        ) : null}
         {gallery.length > 0 ? (
           <div className="modal__viewer">
             <button

@@ -73,7 +73,7 @@ const About = () => {
               </div>
 
               <div className="skills__bar">
-                <span className="skills__percentage full"></span>
+                <span className="skills__percentage hundred"></span>
               </div>
             </div>
 
@@ -86,18 +86,18 @@ const About = () => {
               </div>
 
               <div className="skills__bar">
-                <span className="skills__percentage development"></span>
+                <span className="skills__percentage ninety"></span>
               </div>
             </div>
 
             <div className="skills__data">
               <div className="skills__titles">
                 <h3 className="skills__name">Software Testing</h3>
-                <span className="skills__number">60%</span>
+                <span className="skills__number">80%</span>
               </div>
 
               <div className="skills__bar">
-                <span className="skills__percentage so__so"></span>
+                <span className="skills__percentage eighty"></span>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ const skills = [
   { name: "ExpressJs", category: "framework" },
   { name: "NestJs", category: "framework" },
   { name: "Laravel", category: "framework" },
-  { name: "Kotlin (Jetpack Compose Multiplatform)", category: "framework" },
+  { name: "Kotlin (Compose Multiplatform)", category: "framework" },
   { name: "Ktor (Kotlin Server Side)", category: "framework" },
   { name: "Selenium (Python)", category: "framework" },
   { name: "PostgreSQL", category: "database" },

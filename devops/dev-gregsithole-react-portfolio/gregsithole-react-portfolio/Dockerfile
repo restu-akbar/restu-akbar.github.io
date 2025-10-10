@@ -1,20 +1,16 @@
-FROM node:14.18.3  AS development
+FROM node:22-alpine
 ENV NODE_ENV development
 
-# Add a work directory
 WORKDIR /app
 
-# Cache and Install dependencies
+#salin file dependency dari root context
 COPY package.json .
 COPY yarn.lock .
 
-RUN yarn install
+RUN corepack enable && yarn install
 
-# Copy app files
+# salin source lain
 COPY . .
 
-# Expose port
 EXPOSE 3000
-
-# Start the app
-CMD [ "yarn", "start" ]
+CMD ["yarn", "start"]

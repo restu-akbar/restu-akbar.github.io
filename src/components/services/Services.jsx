@@ -23,9 +23,9 @@ const data = [
   {
     id: 3,
     image: Image3,
-    title: "Database Design & Optimization",
+    title: "Automated Testing",
     description:
-      "Designing and optimizing databases to meet user requirements while ensuring fast and efficient query performance.",
+      "Automating web application testing using Selenium for faster, reliable, and repeatable test execution.",
   },
   {
     id: 4,
@@ -63,4 +63,3 @@ const Services = () => {
 };
 
 export default Services;
-

@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: ../..
+      dockerfile: devops/dev-gregsithole-react-portfolio/gregsithole-react-portfolio/Dockerfile
+    volumes:
+      - ../..:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"

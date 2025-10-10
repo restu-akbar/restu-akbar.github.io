@@ -96,18 +96,18 @@
   display: block;
 }
 
-.full {
+.hundred {
   width: 100%;
   background-color: rgb(255, 76, 96);
 }
 
-.development {
+.ninety {
   width: 90%;
   background-color: rgb(115, 0, 255);
 }
 
-.so__so {
-  width: 60%;
+.eighty {
+  width: 80%;
   background-color: rgb(255, 209, 92);
 }
 

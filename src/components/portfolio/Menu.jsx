@@ -38,6 +38,8 @@ const Menu = [
     repositoryUrl: "https://github.com/restu-akbar/poker-tongkrongan.git",
     tech: [
       "C++",
+      "Pointer in C",
+      "Memory Management",
       "Data Structure & Algorithms (Linked List, Queue, Stack, etc)",
     ],
   },
@@ -61,6 +63,8 @@ const Menu = [
     category: ["NodeJs"],
     repositoryUrl: "https://github.com/restu-akbar/sig-app.git",
     tech: ["Express", "LeafletJs"],
+    description:
+      "A simple geolocation application that allows users to view and mark locations on an interactive map. This project is built with Express as the backend and LeafletJs for the map, designed to demonstrate basic location features and spatial data visualization in real time.",
   },
   {
     id: 4,
@@ -78,13 +82,12 @@ const Menu = [
     title: "Srikandi App - Academic Project",
     category: ["Kotlin"],
     repositoryUrl: "https://github.com/DzakiNurhidayat/srikandi-app",
-    url: "https://www.linkedin.com/in/restuakbar",
     description:
       "Srikandi is an mobile-based application developed for use within university environments. The platform is designed as a secure, confidential, and responsive reporting tool for incidents of violence, while also providing digital analysis features to help universities systematically map and address cases. Through Srikandi, users—including victims, witnesses, and relevant parties—can report incidents of violence. The system is equipped with supporting features such as psychological and legal assistance services, report status tracking, and educational modules for awareness and prevention.Srikandi aims to foster a safer, more inclusive, and violence-free campus environment, in line with the com",
     gallery: [Work5, Work5_1, Work5_2, Work5_3, Work5_4],
     tech: [
       "Jetpack Compose",
-      "MVVM Architecture",
+      "Clean Architecture",
       "Ktor",
       "Dependency Injection (Koin & Dagger Hilt)",
     ],
@@ -99,7 +102,7 @@ const Menu = [
       "The Tax Period Notification System (SSPM) AkuPrim is a web application developed to support tax data recording and management for AkuPrim, a tax consulting firm, in serving their clients. The application includes features such as income tax (PPh) and value-added tax (VAT) recording, invoice reporting, and other tax documentation required by consultants. In this project, I served as a Fullstack Developer.",
     contributions: [
       "Integrated Laravel Excel for data import and export features",
-      "Developed email functionality using Laravel’s mailing system to support client communications for AkuPrim",
+      "Developed email functionality using Laravel’s mailing system",
       "Built frontend components with Laravel Livewire",
     ],
     gallery: [Work6, Work6_1, Work6_2, Work6_3, Work6_4],
@@ -107,7 +110,7 @@ const Menu = [
       "Laravel Livewire",
       "Laravel Maatwebsite Excel",
       "Yajra Datatables",
-      "Laravel E-mail",
+      "Laravel Email",
     ],
   },
   {
@@ -141,7 +144,6 @@ const Menu = [
     title: "Atisisbada - Automated Testing",
     category: ["Other"],
     repositoryUrl: "https://github.com/restu-akbar/atisisbada-test.git",
-    url: "https://www.linkedin.com/in/restuakbar",
     description:
       "In this project, I served as a QA Tester, focusing on automated testing using Selenium (Python) for ATISISBADA (Regional Asset Management Information System). This application is used by local governments in Indonesia to manage the entire lifecycle of regional assets, including procurement, utilization, maintenance, and disposal.",
     contributions: [
@@ -166,17 +168,19 @@ const Menu = [
       "Bayar Air is a mobile-based application developed to simplify and modernize the process of recording water meter usage in a practical, secure, and transparent way. The platform is designed to give users real-time access to their recorded data, ensuring accuracy and reducing manual errors in the billing process. I contributed as a Backend Developer, Mobile Developer, and DevOps Engineer.",
     contributions: [
       "Designed and developed a mobile-based application for water meter recording.",
-      "Implemented features to log and store water usage data securely.",
-      "Built a user-friendly interface with Jetpack Compose for accurate data entry.",
-      "Developed RESTful APIs using laravel to handle water meter data synchronization.",
+      "Implemented features to log and store water usage data.",
+      "Built interface with Compose Multiplatform.",
+      "Designed and optimized database schemas using MySQL.",
+      "Developed RESTful APIs using laravel.",
       "Applied Koin for dependency injection to improve modularity and scalability.",
-      "Supported digital transformation of utilities by reducing reliance on manual water meter tracking.",
+      "Configured CI/CD pipelines (GitHub CI/CD) to automate deployments.",
+      "Managed and maintained production servers in a Linux environment with cPanel monitoring",
     ],
     tech: [
       "Kotlin Compose Multiplatform",
       "Koin Dependency Injection",
       "Ktor & HTTP Client",
-      "MVVM Architecture",
+      "Clean Architecture",
       "Laravel Api",
       "Hostinger CPanel & SSH ",
       "GitHub Actions",
