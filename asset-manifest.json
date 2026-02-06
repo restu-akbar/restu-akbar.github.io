@@ -1,11 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.9cb8e436.css",
-    "main.js": "/static/js/main.cf480b5d.js",
+    "main.css": "/static/css/main.d93eea7c.css",
+    "main.js": "/static/js/main.5466077e.js",
+    "static/media/bayarair6.png": "/static/media/bayarair6.9ed76c1e895c6c524991.png",
+    "static/media/komdigi.png": "/static/media/komdigi.cbf40728711aeea84393.png",
     "static/media/geo.png": "/static/media/geo.0c4531971c4ec88158cc.png",
     "static/media/lahkerja1.png": "/static/media/lahkerja1.1191bfd2efaec40b9c1e.png",
-    "static/media/atisisbada1.png": "/static/media/atisisbada1.4704df3f2c9af6baaf3f.png",
     "static/media/atisisbada.png": "/static/media/atisisbada.b21a327af009751f4e26.png",
+    "static/media/atisisbada1.png": "/static/media/atisisbada1.4704df3f2c9af6baaf3f.png",
     "static/media/sspm.png": "/static/media/sspm.995759a175b71dc8cb6f.png",
     "static/media/srikandi.png": "/static/media/srikandi.f2ecdb794825c2b647a1.png",
     "static/media/atisisbada2.png": "/static/media/atisisbada2.35adff30c6463ecc82e1.png",
@@ -15,11 +17,14 @@
     "static/media/profil.png": "/static/media/profil.e405b6136497169d03f0.png",
     "static/media/Restu Akbar-CV-ID.pdf": "/static/media/Restu Akbar-CV-ID.e5698e7ff08d1fb527bf.pdf",
     "static/media/srikandi3.png": "/static/media/srikandi3.0f4e4af1fce24b665a50.png",
+    "static/media/komdigi1.png": "/static/media/komdigi1.bb5fba71e2d416cd80c8.png",
     "static/media/profil-2.jpg": "/static/media/profil-2.e5aebe8d1671d1851d82.jpg",
     "static/media/lahkerja4.png": "/static/media/lahkerja4.57aef4dc48ff53dfded9.png",
     "static/media/sspm2.png": "/static/media/sspm2.7c6235b9857a2f4cff43.png",
     "static/media/pkm.png": "/static/media/pkm.c3bb69456cb7faa70c02.png",
     "static/media/sspm4.png": "/static/media/sspm4.84f5a90e184daa3c8cd2.png",
+    "static/media/komdigi3.png": "/static/media/komdigi3.a4a8910df8ab6c7e1b0d.png",
+    "static/media/komdigi2.png": "/static/media/komdigi2.95f9c665b598b7512314.png",
     "static/media/srikandi2.png": "/static/media/srikandi2.d78c5b2f21e6484f5d3c.png",
     "static/media/bayarair3.png": "/static/media/bayarair3.afd4a82d87db1f22a0e8.png",
     "static/media/bayarair2.png": "/static/media/bayarair2.76c1e07ca3b2e2ca1cca.png",
@@ -46,11 +51,11 @@
     "static/media/service-4.svg": "/static/media/service-4.5f1f9c3ce79d5ce910bbc586489a0fc5.svg",
     "static/media/light-logo.svg": "/static/media/light-logo.533c20f31bf65c1c1d8c3a6d407f5304.svg",
     "index.html": "/index.html",
-    "main.9cb8e436.css.map": "/static/css/main.9cb8e436.css.map",
-    "main.cf480b5d.js.map": "/static/js/main.cf480b5d.js.map"
+    "main.d93eea7c.css.map": "/static/css/main.d93eea7c.css.map",
+    "main.5466077e.js.map": "/static/js/main.5466077e.js.map"
   },
   "entrypoints": [
-    "static/css/main.9cb8e436.css",
-    "static/js/main.cf480b5d.js"
+    "static/css/main.d93eea7c.css",
+    "static/js/main.5466077e.js"
   ]
 }
