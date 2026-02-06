@@ -3,13 +3,13 @@ ENV NODE_ENV development
 
 WORKDIR /app
 
-#salin file dependency dari root context
+RUN apk add --no-cache git openssh-client
+
 COPY package.json .
 COPY yarn.lock .
 
 RUN corepack enable && yarn install
 
-# salin source lain
 COPY . .
 
 EXPOSE 3000

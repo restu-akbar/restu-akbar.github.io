@@ -1,5 +1,6 @@
 COMPOSE_FILE=./devops/dev-gregsithole-react-portfolio/docker-compose.yml
 SERVICE=app
+.PHONY: build
 
 up:
 	docker compose -f $(COMPOSE_FILE) up -d
@@ -11,7 +12,7 @@ down:
 	docker compose -f $(COMPOSE_FILE) down
 
 restart:
-	docker compose -f $(COMPOSE_FILE) down
+	docker compose -f $(COMPOSE_FILE) stop
 	docker compose -f $(COMPOSE_FILE) up -d
 
 build:

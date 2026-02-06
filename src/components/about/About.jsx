@@ -112,7 +112,7 @@ const About = () => {
 const skills = [
   { name: "NodeJs", category: "framework" },
   { name: "ExpressJs", category: "framework" },
-  { name: "NestJs", category: "framework" },
+  { name: "NextJs", category: "framework" },
   { name: "Laravel", category: "framework" },
   { name: "Kotlin (Compose Multiplatform)", category: "framework" },
   { name: "Ktor (Kotlin Server Side)", category: "framework" },

@@ -29,6 +29,16 @@ import Work9_2 from "../../assets/bayar-air/bayarair2.png";
 import Work9_3 from "../../assets/bayar-air/bayarair3.png";
 import Work9_4 from "../../assets/bayar-air/bayarair4.png";
 import Work9_5 from "../../assets/bayar-air/bayarair5.png";
+import Work9_6 from "../../assets/bayar-air/bayarair6.png";
+import Work10 from "../../assets/komdigi/komdigi.png";
+import Work10_1 from "../../assets/komdigi/komdigi1.png";
+import Work10_2 from "../../assets/komdigi/komdigi2.png";
+import Work10_3 from "../../assets/komdigi/komdigi3.png";
+import Work11 from "../../assets/atisisbada-page/atisisbada.png";
+//import Work11_1 from "../../assets/atisisbada-page/atisisbada1.png";
+//import Work11_2 from "../../assets/atisisbada-page/atisisbada2.png";
+//import Work11_3 from "../../assets/atisisbada-page/atisisbada3.png";
+
 const Menu = [
   {
     id: 1,
@@ -163,7 +173,7 @@ const Menu = [
     category: ["Laravel", "Kotlin"],
     repositoryUrl: "https://github.com/restu-akbar/bayar-air-app.git",
     url: "https://bayarair.progantara.com",
-    gallery: [Work9, Work9_1, Work9_2, Work9_3, Work9_4, Work9_5],
+    gallery: [Work9, Work9_1, Work9_2, Work9_3, Work9_4, Work9_5, Work9_6],
     description:
       "Bayar Air is a mobile-based application developed to simplify and modernize the process of recording water meter usage in a practical, secure, and transparent way. The platform is designed to give users real-time access to their recorded data, ensuring accuracy and reducing manual errors in the billing process. I contributed as a Backend Developer, Mobile Developer, and DevOps Engineer.",
     contributions: [
@@ -184,6 +194,63 @@ const Menu = [
       "Laravel Api",
       "Hostinger CPanel & SSH ",
       "GitHub Actions",
+    ],
+  },
+  {
+    id: 10,
+    image: Work10,
+    title: "Profiling & Dashboard Kepatuhan Komdigi",
+    category: ["Laravel"],
+    url: "https://datahub.komdigi.go.id/",
+    gallery: [Work10, Work10_1, Work10_2, Work10_3],
+    description:
+      "Profiling Komdigi is an application used to display profiles of broadcasting, postal, and telecommunications companies registered at Komdigi. The application presents detailed company data sourced from Komdigi Datahub. Dashboard Kepatuhan is a Komdigi application that displays annual compliance reports of companies toward Komdigi regulations. I contributed as a Fullstack Developer focusing on API updates and data integration.",
+    contributions: [
+      "Updated Profiling Komdigi APIs to support company profile data for broadcasting, postal, and telecommunications sectors.",
+      "Identified and integrated data sources from Komdigi Datahub for use in Profiling and Dashboard Kepatuhan applications.",
+      "Developed and improved APIs to display annual compliance report data on the Dashboard Kepatuhan.",
+      "Ensured data consistency and accuracy between Datahub Komdigi and application services.",
+      "Maintained and optimized backend services using Laravel.",
+    ],
+    tech: [
+      "Laravel API",
+      "Laravel Scheduler",
+      "RESTful API",
+      "MySQL",
+      "GitHub",
+    ],
+  },
+  {
+    id: 11,
+    image: Work11,
+    title: "Atisisbada Content Management System",
+    category: ["NodeJs"],
+    url: "https://dev-atis-landingpage.atisisbada.id/",
+    gallery: [
+      Work11,
+      // Work11_1,
+      // Work11_2,
+      // Work11_3,
+      // Work11_4,
+      // Work11_5,
+      // Work11_6,
+    ],
+    description:
+      "Atisisbada CMS is a content management system for managing a dynamic landing page. The system enables administrators to manage page content, sections, and media through a web interface. I contributed as a Fullstack Developer and DevOps Engineer, focusing on application development and server management.",
+    contributions: [
+      "Developed a dynamic landing page using Next.js.",
+      "Built CMS features to manage landing page sections and content.",
+      "Deployed and managed the application server via SSH.",
+      "Configured and maintained production environment for the Next.js application.",
+    ],
+    tech: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "SSH",
+      "Linux Server",
+      "GitHub",
+      "BetterAuth",
     ],
   },
 ];

@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   RiLink,
@@ -11,6 +11,7 @@ import "./Portfolio.css";
 import Menu from "./Menu";
 
 const sortByIdDesc = (arr) => [...arr].sort((a, b) => b.id - a.id);
+
 const allCategories = [
   "All",
   ...new Set(Menu.flatMap((item) => item.category)),
@@ -19,16 +20,21 @@ const allCategories = [
 const Portfolio = () => {
   const [items, setItems] = useState(sortByIdDesc(Menu));
   const [activeFilter, setActiveFilter] = useState(0);
-
+  const [filterKey, setFilterKey] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showAll, setShowAll] = useState(false);
+
+  const MAX_ITEMS = 9;
+  const itemsToShow = showAll ? items : items.slice(0, MAX_ITEMS);
 
   const filterItems = (categoryItem) => {
     const updatedItems = Menu.filter((curElem) =>
       curElem.category.includes(categoryItem),
     );
     setItems(sortByIdDesc(updatedItems));
+    setFilterKey((prev) => prev + 1);
   };
 
   const openModal = useCallback((item) => {
@@ -84,8 +90,10 @@ const Portfolio = () => {
                 : "portfolio__item"
             }
             onClick={() => {
+              setShowAll(false);
               if (cat === "All") {
                 setItems(sortByIdDesc(Menu));
+                setFilterKey((prev) => prev + 1);
               } else {
                 filterItems(cat);
               }
@@ -98,75 +106,89 @@ const Portfolio = () => {
       </div>
 
       <div className="portfolio__container grid">
-        {items.map((elem) => {
-          const { id, image, title, category, url, repositoryUrl } = elem;
+        <AnimatePresence mode="wait">
+          {itemsToShow.map((elem) => {
+            const { id, image, title, category, url, repositoryUrl } = elem;
 
-          return (
-            <motion.div
-              layout
-              animate={{ opacity: 1 }}
-              initial={{ opacity: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="portfolio__card"
-              key={id}
-            >
-              <button
-                className="portfolio__thumbnail"
-                onClick={() => openModal(elem)}
-                aria-label={`Lihat galeri untuk ${title}`}
+            return (
+              <motion.div
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                className="portfolio__card"
+                key={`${filterKey}-${id}`}
               >
-                <img
-                  src={image}
-                  alt={title}
-                  className="portfolio__img"
-                  height="267"
-                />
-                <div className="portfolio__mask"></div>
-              </button>
+                <button
+                  className="portfolio__thumbnail"
+                  onClick={() => openModal(elem)}
+                  aria-label={`Lihat galeri untuk ${title}`}
+                >
+                  <img
+                    src={image}
+                    alt={title}
+                    className="portfolio__img"
+                    height="267"
+                  />
+                  <div className="portfolio__mask"></div>
+                </button>
 
-              <span className="portfolio__category">{category.join(", ")}</span>
-              <h3 className="portfolio__title">{title}</h3>
-              {url ? (
-                <>
+                <span className="portfolio__category">
+                  {category.join(", ")}
+                </span>
+                <h3 className="portfolio__title">{title}</h3>
+
+                {url ? (
+                  <>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="portfolio__button"
+                      aria-label="Buka project"
+                    >
+                      <RiLink className="portfolio__button-icon" />
+                    </a>
+                    {repositoryUrl && (
+                      <a
+                        href={repositoryUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="portfolio__github-button"
+                        aria-label="Buka repository"
+                      >
+                        <RiGithubLine className="portfolio__button-icon" />
+                      </a>
+                    )}
+                  </>
+                ) : repositoryUrl ? (
                   <a
-                    href={url}
+                    href={repositoryUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="portfolio__button"
-                    aria-label="Buka project"
+                    aria-label="Buka repository"
                   >
-                    <RiLink className="portfolio__button-icon" />
+                    <RiGithubLine className="portfolio__button-icon" />
                   </a>
-                  {repositoryUrl && (
-                    <a
-                      href={repositoryUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="portfolio__github-button"
-                      aria-label="Buka repository"
-                    >
-                      <RiGithubLine className="portfolio__button-icon" />
-                    </a>
-                  )}
-                </>
-              ) : repositoryUrl ? (
-                <a
-                  href={repositoryUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="portfolio__button"
-                  aria-label="Buka repository"
-                >
-                  <RiGithubLine className="portfolio__button-icon" />
-                </a>
-              ) : null}
-            </motion.div>
-          );
-        })}
+                ) : null}
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
       </div>
+      {items.length > MAX_ITEMS && !showAll && (
+        <div className="portfolio__more">
+          <button
+            className="portfolio__more-btn"
+            onClick={() => setShowAll(true)}
+          >
+            View all projects
+          </button>
+        </div>
+      )}
 
-      {/* NEW: Modal */}
       <AnimatePresence>
         {isModalOpen && selectedItem && (
           <ModalGallery
@@ -192,6 +214,31 @@ const ModalGallery = ({
   setSlide,
 }) => {
   const gallery = item.gallery ?? [];
+  const [direction, setDirection] = useState(0);
+  const handleNext = () => {
+    setDirection(1);
+    onNext();
+  };
+
+  const handlePrev = () => {
+    setDirection(-1);
+    onPrev();
+  };
+
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 100 : -100,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => ({
+      x: direction > 0 ? -100 : 100,
+      opacity: 0,
+    }),
+  };
 
   return (
     <motion.div
@@ -223,9 +270,11 @@ const ModalGallery = ({
             <span className="modal__chips">{item.category.join(" • ")}</span>
           ) : null}
         </div>
+
         {item.description ? (
           <p className="modal__desc">{item.description}</p>
         ) : null}
+
         {item.contributions?.length > 0 && (
           <div className="modal__contribs">
             <h4>Contributions</h4>
@@ -236,6 +285,7 @@ const ModalGallery = ({
             </ul>
           </div>
         )}
+
         {item.tech?.length > 0 && (
           <div className="modal__contribs">
             <h4>Tech Stack, Package and Library</h4>
@@ -246,6 +296,7 @@ const ModalGallery = ({
             </ul>
           </div>
         )}
+
         {item.url ? (
           <div className="modal__contribs">
             <h4>Project Url</h4>
@@ -259,25 +310,35 @@ const ModalGallery = ({
             </a>
           </div>
         ) : null}
+
         {gallery.length > 0 ? (
           <div className="modal__viewer">
             <button
               className="modal__nav modal__nav--left"
-              onClick={onPrev}
+              onClick={handlePrev}
               aria-label="Sebelumnya"
             >
               <RiArrowLeftSLine />
             </button>
 
-            <img
-              className="modal__image"
-              src={gallery[currentSlide]}
-              alt={`${item.title} - Gambar ${currentSlide + 1}`}
-            />
+            <AnimatePresence custom={direction} mode="wait">
+              <motion.img
+                key={currentSlide}
+                className="modal__image"
+                src={gallery[currentSlide]}
+                alt={`${item.title} - Gambar ${currentSlide + 1}`}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.25, ease: "easeOut" }}
+              />
+            </AnimatePresence>
 
             <button
               className="modal__nav modal__nav--right"
-              onClick={onNext}
+              onClick={handleNext}
               aria-label="Berikutnya"
             >
               <RiArrowRightSLine />

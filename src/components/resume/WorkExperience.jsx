@@ -43,6 +43,19 @@ const WorkExperience = [
     ],
     link: "https://www.progantara.com",
   },
+  {
+    id: 4,
+    title: "Fullstack Engineer & Java Tutor",
+    company: "The Code Indonesia",
+    yearsActive: "October 2025 - January 2026",
+    information: [
+      "Taught Java programming from fundamental to advanced topics, including OOP and Java Collections.",
+      "Mentored participants in completing final projects using Java.",
+      "Developed course and ebook management features in siapin app to support learning content distribution.",
+      "Deployed and maintained the siapin application on a server via SSH, including server setup and application management.",
+    ],
+    link: "https://thecode.id/",
+  },
 ];
 
 export default WorkExperience;
