@@ -80,7 +80,7 @@ const About = () => {
             <div className="skills__data">
               <div className="skills__titles">
                 <h3 className="skills__name">
-                  Software Design and Documentation
+                  Software Deployment and Server Management
                 </h3>
                 <span className="skills__number">90%</span>
               </div>
@@ -89,7 +89,6 @@ const About = () => {
                 <span className="skills__percentage ninety"></span>
               </div>
             </div>
-
             <div className="skills__data">
               <div className="skills__titles">
                 <h3 className="skills__name">Software Testing</h3>
@@ -110,9 +109,16 @@ const About = () => {
 };
 
 const skills = [
+  { name: "Proxmox", category: "devops" },
+  { name: "Docker", category: "devops" },
+  { name: "Microsoft Azure", category: "devops" },
+  { name: "Debian Server", category: "devops" },
+  { name: "Nginx", category: "devops" },
+  { name: "On-Premises and Cloud Server Management", category: "devops" },
+  { name: "VueJs", category: "framework" },
+  { name: "Spring Boot", category: "framework" },
   { name: "NodeJs", category: "framework" },
   { name: "ExpressJs", category: "framework" },
-  { name: "NextJs", category: "framework" },
   { name: "Laravel", category: "framework" },
   { name: "Kotlin (Compose Multiplatform)", category: "framework" },
   { name: "Ktor (Kotlin Server Side)", category: "framework" },

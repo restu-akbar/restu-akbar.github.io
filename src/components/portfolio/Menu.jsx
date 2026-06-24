@@ -236,7 +236,7 @@ const Menu = [
       // Work11_6,
     ],
     description:
-      "Atisisbada CMS is a content management system for managing a dynamic landing page. The system enables administrators to manage page content, sections, and media through a web interface. I contributed as a Fullstack Developer and DevOps Engineer, focusing on application development and server management.",
+      "Atisisbada CMS is a content management system designed to manage and customize a dynamic landing page efficiently. The system enables administrators to control page content, sections, layouts, and media assets through an intuitive web-based interface without requiring direct code modifications.",
     contributions: [
       "Developed a dynamic landing page using Next.js.",
       "Built CMS features to manage landing page sections and content.",
@@ -248,8 +248,8 @@ const Menu = [
       "React",
       "Node.js",
       "SSH",
-      "Linux Server",
-      "GitHub",
+      "Proxmox Server",
+      "GitHub CI/CD",
       "BetterAuth",
     ],
   },

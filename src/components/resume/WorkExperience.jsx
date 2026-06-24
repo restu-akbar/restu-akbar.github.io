@@ -56,6 +56,21 @@ const WorkExperience = [
     ],
     link: "https://thecode.id/",
   },
+  {
+    id: 5,
+    title: "Fullstack Engineer & System Administrator",
+    company: "Pilar Wahana Artha",
+    yearsActive: "February 2026 - Present",
+    information: [
+      "Designed and developed a CMS application for managing and publishing company landing page content.",
+      "Built and maintained full-stack features, including content management, user access control, and API integrations.",
+      "Deployed and maintained web applications on production servers, ensuring reliability and performance.",
+      "Managed on-premises server infrastructure, including system configuration, monitoring, security updates, and troubleshooting.",
+      "Implemented backup and maintenance procedures to ensure system availability and data integrity.",
+      "Optimized server performance and application deployment workflows to support business operations.",
+    ],
+    link: "https://dev-atis-landingpage.atisisbada.id/",
+  },
 ];
 
 export default WorkExperience;
