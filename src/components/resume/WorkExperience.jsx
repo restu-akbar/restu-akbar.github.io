@@ -14,21 +14,6 @@ const WorkExperience = [
   },
   {
     id: 2,
-    title: "Backend Developer",
-    company: "Muri Digital International Company",
-    yearsActive: "April 2025 - June 2025",
-    information: [
-      "Designed database schemas for course application.",
-      "Developed RESTful APIs.",
-      "Built server-side logic for course app.",
-      "Wrote unit and integration tests to ensure backend reliability.",
-      "Collaborated with frontend developers and documented API endpoints.",
-      "Optimized server performance using caching and query optimization.",
-    ],
-    link: "https://muridigital.co.id/",
-  },
-  {
-    id: 3,
     title: "Fullstack & DevOps Engineer",
     company: "Progantara Teknologi Indonesia Company",
     yearsActive: "June 2025 - October 2025",
@@ -44,7 +29,7 @@ const WorkExperience = [
     link: "https://www.progantara.com",
   },
   {
-    id: 4,
+    id: 3,
     title: "Fullstack Engineer & Java Tutor",
     company: "The Code Indonesia",
     yearsActive: "October 2025 - January 2026",
@@ -57,7 +42,7 @@ const WorkExperience = [
     link: "https://thecode.id/",
   },
   {
-    id: 5,
+    id: 4,
     title: "Fullstack Engineer & System Administrator",
     company: "Pilar Wahana Artha",
     yearsActive: "February 2026 - Present",

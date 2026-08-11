@@ -9,7 +9,7 @@ const AboutBox = () => {
 
                 <div>
                     <h3 className="about__title">3</h3>
-                    <span className="about__subtitle">Years of Experience (Academic, Intern, & Freelance Projects)</span>
+                    <span className="about__subtitle">Years of Experience (Academic, Intern, & Part-Time Projects)</span>
                 </div>
             </div>
 
@@ -17,7 +17,7 @@ const AboutBox = () => {
                 <RiCupLine className='about__icon' />
 
                 <div>
-                    <h3 className="about__title">15</h3>
+                    <h3 className="about__title">16</h3>
                     <span className="about__subtitle">Github Repositories</span>
                 </div>
             </div>
@@ -26,7 +26,7 @@ const AboutBox = () => {
                 <RiGroupLine className='about__icon' />
 
                 <div>
-                    <h3 className="about__title">7</h3>
+                    <h3 className="about__title">8</h3>
                     <span className="about__subtitle">Projects</span>
                 </div>
             </div>
@@ -35,7 +35,7 @@ const AboutBox = () => {
                 <RiTrophyLine className='about__icon' />
 
                 <div>
-                    <h3 className="about__title">80</h3>
+                    <h3 className="about__title">85</h3>
                     <span className="about__subtitle">Code Quality</span>
                 </div>
             </div>

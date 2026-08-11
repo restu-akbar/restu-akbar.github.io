@@ -289,7 +289,7 @@ const ModalGallery = ({
         {item.tech?.length > 0 && (
           <div className="modal__contribs">
             <h4>Tech Stack, Package and Library</h4>
-            <ul>
+            <ul className="modal__tech-list">
               {item.tech.map((point, idx) => (
                 <li key={idx}>{point}</li>
               ))}

@@ -38,6 +38,11 @@ import Work11 from "../../assets/atisisbada-page/atisisbada.png";
 //import Work11_1 from "../../assets/atisisbada-page/atisisbada1.png";
 //import Work11_2 from "../../assets/atisisbada-page/atisisbada2.png";
 //import Work11_3 from "../../assets/atisisbada-page/atisisbada3.png";
+import Work12 from "../../assets/sikpk/sikpk.png";
+import Work12_1 from "../../assets/sikpk/sikpk1.png";
+import Work12_2 from "../../assets/sikpk/sikpk2.png";
+import Work12_3 from "../../assets/sikpk/sikpk3.png";
+import Work12_4 from "../../assets/sikpk/sikpk4.png";
 
 const Menu = [
   {
@@ -251,6 +256,39 @@ const Menu = [
       "Proxmox Server",
       "GitHub CI/CD",
       "BetterAuth",
+    ],
+  },
+  {
+    id: 12,
+    image: Work12,
+    title: "SIKPK – Violence Reporting and Case Handling Information System",
+    category: ["Laravel"],
+    url: "https://sikpk-app.calmbush-8824c64a.southeastasia.azurecontainerapps.io/",
+    gallery: [Work12, Work12_1, Work12_2, Work12_3, Work12_4],
+    description:
+      "SIKPK is a secure web-based information system developed for Politeknik Negeri Bandung to manage reports and cases involving violence within the campus environment. The application enables members of the academic community to confidentially submit reports and supporting evidence, track case progress, and communicate with the PPKPT Task Force. It also provides authorized officers with tools to manage reports through clarification, examination, conclusion, post-handling, and archival stages.",
+    contributions: [
+      "Developed a responsive public landing page and reporting portal.",
+      "Built confidential report submission and case-progress tracking features.",
+      "Developed role-based dashboards and report management workflows for the PPKPT Task Force.",
+      "Implemented case-handling stages covering clarification, examination, conclusion, post-handling, and archival.",
+      "Implemented client-side hybrid encryption using AES-GCM and RSA-OAEP to protect report narratives, evidence, documents, and audio recordings.",
+      "Integrated Google OAuth authentication for reporters and secure authentication for task force members.",
+      "Built user management, document management, reporting dashboards, and PDF generation features.",
+      "Containerized the application using Docker.",
+    ],
+    tech: [
+      "Laravel",
+      "Vue.js",
+      "TypeScript",
+      "Inertia.js",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Laravel Socialite",
+      "Google OAuth",
+      "Web Crypto API",
+      "Docker",
+      "GitHub Actions CI/CD",
     ],
   },
 ];

@@ -308,6 +308,25 @@
   margin-bottom: 6px;
 }
 
+.modal__contribs .modal__tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+.modal__tech-list li {
+  flex: 0 0 auto;
+  margin-bottom: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f0f0f0;
+  white-space: nowrap;
+}
+[data-theme="dark"] .modal__tech-list li {
+  background: #222;
+}
+
 .modal__thumbs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));

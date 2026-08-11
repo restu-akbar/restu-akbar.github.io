@@ -20,19 +20,15 @@ const About = () => {
         <div className="about__data grid">
           <div className="about__info">
             <p className="about__description">
-              Hello! I’m Restu, a Software Engineering student at Politeknik
-              Negeri Bandung with a strong focus on applying my knowledge
-              directly to real-world projects. Beyond academics, internships,
-              and independent projects, I actively work on building impactful
-              applications and solutions that reflect industry practices, from
-              planning and development to deployment.
-              <br />
-              <br />
-              My focus is on delivering clean, scalable, and efficient code
-              while continuously adapting to new technologies and industry best
-              practices. I enjoy tackling complex challenges, optimizing
-              systems, and contributing to products that create real-world
-              impact.
+              Fresh graduate in Informatics Engineering from Politeknik Negeri
+              Bandung with hands-on experience building applications end-to-end
+              from planning and development to deployment through academic
+              projects, internships, and independent work. Skilled in writing
+              clean, scalable, and efficient code that follows industry
+              standards, with a strong interest in solving complex technical
+              challenges and optimizing system performance. Quick to adapt to
+              new technologies and driven to deliver meaningful contributions to
+              products with broad impact.
               <br />
               <br />
               Here are some of the technologies I’ve been diving into recently:
@@ -116,9 +112,9 @@ const skills = [
   { name: "Nginx", category: "devops" },
   { name: "On-Premises and Cloud Server Management", category: "devops" },
   { name: "VueJs", category: "framework" },
+  { name: "NextJs", category: "framework" },
   { name: "Spring Boot", category: "framework" },
   { name: "NodeJs", category: "framework" },
-  { name: "ExpressJs", category: "framework" },
   { name: "Laravel", category: "framework" },
   { name: "Kotlin (Compose Multiplatform)", category: "framework" },
   { name: "Ktor (Kotlin Server Side)", category: "framework" },

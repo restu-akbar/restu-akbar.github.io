@@ -1,4 +1,3 @@
-import React from 'react';
 import './Home.css';
 import Me from '../../assets/profil.png';
 import HeaderSocials from './HeaderSocials';
