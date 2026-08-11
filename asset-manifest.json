@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d93eea7c.css",
-    "main.js": "/static/js/main.36349b91.js",
+    "main.css": "/static/css/main.2e03998f.css",
+    "main.js": "/static/js/main.784b9b74.js",
     "static/media/bayarair6.png": "/static/media/bayarair6.9ed76c1e895c6c524991.png",
     "static/media/komdigi.png": "/static/media/komdigi.cbf40728711aeea84393.png",
     "static/media/geo.png": "/static/media/geo.0c4531971c4ec88158cc.png",
@@ -9,6 +9,7 @@
     "static/media/atisisbada.png": "/static/media/atisisbada.b21a327af009751f4e26.png",
     "static/media/atisisbada1.png": "/static/media/atisisbada1.4704df3f2c9af6baaf3f.png",
     "static/media/sspm.png": "/static/media/sspm.995759a175b71dc8cb6f.png",
+    "static/media/sikpk.png": "/static/media/sikpk.5f2c0de14fb9637a85ef.png",
     "static/media/srikandi.png": "/static/media/srikandi.f2ecdb794825c2b647a1.png",
     "static/media/atisisbada2.png": "/static/media/atisisbada2.35adff30c6463ecc82e1.png",
     "static/media/bayarair.png": "/static/media/bayarair.03983a00d8b27f66151b.png",
@@ -16,6 +17,7 @@
     "static/media/profil.png": "/static/media/profil.e405b6136497169d03f0.png",
     "static/media/Restu Akbar-CV-EN.pdf": "/static/media/Restu Akbar-CV-EN.39b33253936a17098998.pdf",
     "static/media/Restu Akbar-CV-ID.pdf": "/static/media/Restu Akbar-CV-ID.1b880378835f190999fd.pdf",
+    "static/media/sikpk1.png": "/static/media/sikpk1.fd4e54abfed6f1962355.png",
     "static/media/srikandi3.png": "/static/media/srikandi3.0f4e4af1fce24b665a50.png",
     "static/media/komdigi1.png": "/static/media/komdigi1.bb5fba71e2d416cd80c8.png",
     "static/media/profil-2.jpg": "/static/media/profil-2.e5aebe8d1671d1851d82.jpg",
@@ -30,10 +32,13 @@
     "static/media/bayarair2.png": "/static/media/bayarair2.76c1e07ca3b2e2ca1cca.png",
     "static/media/srikandi1.png": "/static/media/srikandi1.bc1c0fffec231e3ceca0.png",
     "static/media/srikandi4.png": "/static/media/srikandi4.f18b60091660054871cb.png",
+    "static/media/sikpk2.png": "/static/media/sikpk2.779e404e2c5e3a0a79fd.png",
+    "static/media/sikpk4.png": "/static/media/sikpk4.ac16035aa8402ee766fc.png",
     "static/media/exam.png": "/static/media/exam.8fff684031564b0eb827.png",
     "static/media/poker.png": "/static/media/poker.140aa13196b96c09c25c.png",
     "static/media/sspm1.png": "/static/media/sspm1.1b15c2385365ce798e4c.png",
     "static/media/bayarair4.png": "/static/media/bayarair4.b9e073deb6be4a4b0258.png",
+    "static/media/sikpk3.png": "/static/media/sikpk3.1aa9a7d3e9a407801467.png",
     "static/media/lahkerja6.png": "/static/media/lahkerja6.155a53fb9ba17c64ca6a.png",
     "static/media/lahkerja3.png": "/static/media/lahkerja3.efb5400592731e2180e9.png",
     "static/media/bayarair1.png": "/static/media/bayarair1.ce88db5780b53204c68c.png",
@@ -45,17 +50,13 @@
     "static/media/service-2.svg": "/static/media/service-2.05ef6be93979697986d627045655a978.svg",
     "static/media/service-3.svg": "/static/media/service-3.0f89774a12c093c4be05a3fdb156f497.svg",
     "static/media/service-1.svg": "/static/media/service-1.bb25474569d433b8e5c7d84722afb079.svg",
-    "static/media/logo.svg": "/static/media/logo.bdf08059527dc09e6d4f42d7c9d78b22.svg",
-    "static/media/dots-bg-dark.svg": "/static/media/dots-bg-dark.3a79e4a2778386f14af1.svg",
-    "static/media/dots-bg.svg": "/static/media/dots-bg.aa8289c51cd678b8cd47.svg",
     "static/media/service-4.svg": "/static/media/service-4.5f1f9c3ce79d5ce910bbc586489a0fc5.svg",
-    "static/media/light-logo.svg": "/static/media/light-logo.533c20f31bf65c1c1d8c3a6d407f5304.svg",
     "index.html": "/index.html",
-    "main.d93eea7c.css.map": "/static/css/main.d93eea7c.css.map",
-    "main.36349b91.js.map": "/static/js/main.36349b91.js.map"
+    "main.2e03998f.css.map": "/static/css/main.2e03998f.css.map",
+    "main.784b9b74.js.map": "/static/js/main.784b9b74.js.map"
   },
   "entrypoints": [
-    "static/css/main.d93eea7c.css",
-    "static/js/main.36349b91.js"
+    "static/css/main.2e03998f.css",
+    "static/js/main.784b9b74.js"
   ]
 }
