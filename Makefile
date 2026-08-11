@@ -1,4 +1,4 @@
-COMPOSE_FILE=./devops/dev-gregsithole-react-portfolio/docker-compose.yml
+COMPOSE_FILE=./devops/dev-portfolio/docker-compose.yml
 SERVICE=app
 .PHONY: build
 
@@ -47,4 +47,3 @@ key-generate:
 
 fresh:
 	docker compose -f $(COMPOSE_FILE) exec $(SERVICE) php artisan migrate:fresh --seed
-

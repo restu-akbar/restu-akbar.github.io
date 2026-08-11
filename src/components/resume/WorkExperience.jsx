@@ -15,7 +15,7 @@ const WorkExperience = [
   {
     id: 2,
     title: "Fullstack & DevOps Engineer",
-    company: "Progantara Teknologi Indonesia Company",
+    company: "Progantara Teknologi Indonesia",
     yearsActive: "June 2025 - October 2025",
     information: [
       "Designed and developed RESTful APIs using Laravel.",

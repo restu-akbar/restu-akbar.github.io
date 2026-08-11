@@ -36,10 +36,32 @@ const data = [
   },
 ];
 
+const technologies = [
+  {
+    title: "Frameworks & application",
+    items: ["Vue.js", "Next.js", "Spring Boot", "Node.js", "Laravel", "Kotlin", "Ktor", "Selenium"],
+  },
+  {
+    title: "Infrastructure & delivery",
+    items: ["Proxmox", "Docker", "Microsoft Azure", "Debian Server", "Nginx", "CI/CD"],
+  },
+  {
+    title: "Data",
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
+  },
+];
+
 const Services = () => {
   return (
-    <section className="services container section" id="services">
-      <h2 className="section__title">Skills</h2>
+    <section className="services container section" id="skills">
+      <div className="section__heading">
+        <span className="section__eyebrow">Skills</span>
+        <h2 className="section__title">From interface to infrastructure.</h2>
+        <p className="section__description">
+          Practical experience across product development, quality, deployment,
+          and day-to-day server operations.
+        </p>
+      </div>
 
       <div className="services__container grid">
         {data.map(({ id, image, title, description }) => {
@@ -57,6 +79,17 @@ const Services = () => {
             </div>
           );
         })}
+      </div>
+
+      <div className="technology__grid grid">
+        {technologies.map(({ title, items }) => (
+          <div className="technology__group" key={title}>
+            <h3>{title}</h3>
+            <div className="technology__list">
+              {items.map((item) => <span key={item}>{item}</span>)}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

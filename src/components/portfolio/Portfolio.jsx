@@ -78,17 +78,26 @@ const Portfolio = () => {
 
   return (
     <section className="portfolio container section" id="portfolio">
-      <h2 className="section__title">Recent Projects</h2>
+      <div className="section__heading">
+        <span className="section__eyebrow">Projects</span>
+        <h2 className="section__title">Selected work and case studies.</h2>
+        <p className="section__description">
+          Academic, internship, and professional projects across web, mobile,
+          backend, testing, and infrastructure.
+        </p>
+      </div>
 
       <div className="portfolio__filters">
         {allCategories.map((cat, idx) => (
-          <span
-            key={idx}
+          <button
+            key={cat}
+            type="button"
             className={
               activeFilter === idx
                 ? "portfolio__item portfolio__item-active"
                 : "portfolio__item"
             }
+            aria-pressed={activeFilter === idx}
             onClick={() => {
               setShowAll(false);
               if (cat === "All") {
@@ -101,7 +110,7 @@ const Portfolio = () => {
             }}
           >
             {cat}
-          </span>
+          </button>
         ))}
       </div>
 
@@ -131,25 +140,31 @@ const Portfolio = () => {
                     className="portfolio__img"
                     height="267"
                   />
-                  <div className="portfolio__mask"></div>
+                  <span className="portfolio__mask">View details</span>
                 </button>
 
-                <span className="portfolio__category">
-                  {category.join(", ")}
-                </span>
-                <h3 className="portfolio__title">{title}</h3>
-
-                {url ? (
-                  <>
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="portfolio__button"
-                      aria-label="Buka project"
-                    >
-                      <RiLink className="portfolio__button-icon" />
-                    </a>
+                <div className="portfolio__content">
+                  <div className="portfolio__categories">
+                    {category.map((item) => (
+                      <span className="portfolio__category" key={item}>
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="portfolio__title">{title}</h3>
+                  <div className="portfolio__actions">
+                    {url && (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="portfolio__button"
+                        aria-label="Buka project"
+                      >
+                        <RiLink className="portfolio__button-icon" />
+                        <span>Live project</span>
+                      </a>
+                    )}
                     {repositoryUrl && (
                       <a
                         href={repositoryUrl}
@@ -159,20 +174,11 @@ const Portfolio = () => {
                         aria-label="Buka repository"
                       >
                         <RiGithubLine className="portfolio__button-icon" />
+                        <span>Repository</span>
                       </a>
                     )}
-                  </>
-                ) : repositoryUrl ? (
-                  <a
-                    href={repositoryUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="portfolio__button"
-                    aria-label="Buka repository"
-                  >
-                    <RiGithubLine className="portfolio__button-icon" />
-                  </a>
-                ) : null}
+                  </div>
+                </div>
               </motion.div>
             );
           })}

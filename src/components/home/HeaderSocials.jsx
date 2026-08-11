@@ -3,12 +3,13 @@ import { FaGithub, FaLinkedinIn, FaGitlab } from "react-icons/fa";
 
 const HeaderSocials = () => {
   return (
-    <div className="home__socials">
+    <div className="home__socials" aria-label="Social profiles">
       <a
         href="https://www.github.com/restu-akbar"
         className="home__social-link"
         target="_blank"
         rel="noreferrer"
+        aria-label="GitHub"
       >
         <FaGithub />
       </a>
@@ -18,6 +19,7 @@ const HeaderSocials = () => {
         className="home__social-link"
         target="_blank"
         rel="noreferrer"
+        aria-label="LinkedIn"
       >
         <FaLinkedinIn />
       </a>
@@ -26,6 +28,7 @@ const HeaderSocials = () => {
         className="home__social-link"
         target="_blank"
         rel="noreferrer"
+        aria-label="GitLab"
       >
         <FaGitlab />
       </a>
@@ -34,4 +37,3 @@ const HeaderSocials = () => {
 };
 
 export default HeaderSocials;
-

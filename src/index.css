@@ -1,67 +1,58 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap");
 
 :root {
-  /*=============== Colors ===============*/
-  --first-color: hsl(353, 100%, 65%);
-  --title-color: hsl(244, 100%, 26%);
-  --text-color: hsl(244, 16%, 43%);
-  --body-color: hsl(258, 60%, 98%);
-  --container-color: #fff;
-  --border-color: rgba(0, 0, 0, 0.05);
-
-  /*=============== Font and Typography ===============*/
-  --body-font: "Noto Sans", sans-serif;
-  --h1-font-size: 2.25rem;
-  --h2-font-size: 1.5rem;
-  --h3-font-size: 1.25rem;
+  --first-color: #2563eb;
+  --first-color-hover: #1d4ed8;
+  --accent-color: #0d9488;
+  --accent-soft: #eaf2ff;
+  --title-color: #0f172a;
+  --text-color: #536174;
+  --muted-color: #718096;
+  --body-color: #f8fafc;
+  --container-color: #ffffff;
+  --surface-muted: #f1f5f9;
+  --border-color: #dfe6ef;
+  --body-font: "Inter", sans-serif;
+  --heading-font: "Manrope", sans-serif;
+  --h1-font-size: clamp(2.7rem, 6vw, 5rem);
+  --h2-font-size: clamp(2rem, 4vw, 3.25rem);
+  --h3-font-size: 1.15rem;
   --normal-font-size: 1rem;
   --small-font-size: 0.875rem;
-  --smaller-font-size: 0.813rem;
-
-  /*=============== Font Weight ===============*/
+  --smaller-font-size: 0.78rem;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
-
-  /*=============== Box Shadow ===============*/
-  --shadow: 0px 5px 20px 0px rgb(69 67 96 / 10%);
-
-  /*=============== Border Radius ===============*/
+  --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 24px 70px rgba(15, 23, 42, 0.13);
   --border-radius: 20px;
 }
 
-/*=============== Dark Mode Colors ===============*/
 [data-theme="dark"] {
-  --first-color: hsl(353, 100%, 65%);
-  --title-color: hsl(218, 11%, 69%);
-  --text-color: hsl(0, 0%, 100%);
-  --body-color: hsl(0, 0%, 12.5%);
-  --container-color: hsl(0, 0%, 22%);
-  --shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
-  --border-color: rgba(167, 174, 185, 0.1);
+  --first-color: #60a5fa;
+  --first-color-hover: #93c5fd;
+  --accent-color: #2dd4bf;
+  --accent-soft: #132a46;
+  --title-color: #f8fafc;
+  --text-color: #a9b6c7;
+  --muted-color: #8090a5;
+  --body-color: #07111f;
+  --container-color: #0e1b2c;
+  --surface-muted: #132235;
+  --border-color: #203149;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 26px 70px rgba(0, 0, 0, 0.35);
 }
 
-/*=============== Responsive Typohraphy ===============*/
-@media screen and (max-width: 1024px) {
-  :root {
-    --h1-font-size: 1.75rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
-    --normal-font-size: 0.9rem;
-    --small-font-size: 0.813rem;
-    --smaller-font-size: 0.75rem;
-  }
-}
-
-/*=============== Base ===============*/
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body,
@@ -73,19 +64,33 @@ textarea {
 }
 
 body {
+  background: var(--body-color);
+  color: var(--text-color);
   line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  color: inherit;
 }
 
 main {
-  background-color: var(--body-color);
-  color: var(--text-color);
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 90% 5%, rgba(37, 99, 235, 0.08), transparent 24rem),
+    var(--body-color);
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   color: var(--title-color);
-  font-weight: var(--font-semibold);
+  font-family: var(--heading-font);
+  font-weight: var(--font-bold);
   line-height: 1.2;
 }
 
@@ -94,28 +99,41 @@ ul {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
 button {
+  border: 0;
   cursor: pointer;
-  border: none;
-  outline: none;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
 }
 
 img {
-  max-width: 100%;
+  display: block;
   height: auto;
-  vertical-align: middle;
+  max-width: 100%;
 }
 
-/*=============== Resusable CSS Classes ===============*/
+::selection {
+  background: var(--first-color);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 3px;
+}
 
 .container {
-  max-width: 1080px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
+  margin-inline: auto;
+  max-width: 1160px;
+  padding-inline: 24px;
+  width: 100%;
 }
 
 .grid {
@@ -123,81 +141,102 @@ img {
 }
 
 .section {
-  padding-top: 7rem;
-  padding-bottom: 2rem;
+  padding-block: 7.5rem 1rem;
+}
+
+.section__heading {
+  margin-bottom: 3rem;
+  max-width: 760px;
+}
+
+.section__eyebrow,
+.home__eyebrow {
+  color: var(--first-color);
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  letter-spacing: 0.16em;
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
 }
 
 .section__title {
-  font-size: var(--h1-font-size);
-  margin-left: 0.875rem;
-  font-weight: var(--font-bold);
-  position: relative;
-  margin-bottom: 3.75rem;
+  font-size: var(--h2-font-size);
+  letter-spacing: -0.045em;
+  margin-bottom: 1rem;
 }
 
-.section__title::before {
-  content: "";
-  background: url(./assets/dots-bg.svg);
-  height: 2.25rem;
-  width: 2.25rem;
-  position: absolute;
-  left: -0.875rem;
-  top: -0.875rem;
-}
-
-[data-theme="dark"] .section__title::before {
-  content: "";
-  background: url(./assets/dots-bg-dark.svg);
-  height: 2.25rem;
-  width: 2.25rem;
-  position: absolute;
-  left: -0.875rem;
-  top: -0.875rem;
+.section__description {
+  color: var(--text-color);
+  font-size: 1.08rem;
+  max-width: 650px;
 }
 
 .btn {
-  padding: 0.75rem 2rem;
-  line-height: 1;
-  border-radius: 1.875rem;
-  box-shadow: 0 0 1px rgb(0 0 0 / 0%);
-  border: 1px solid transparent;
+  align-items: center;
+  background: var(--first-color);
+  border: 1px solid var(--first-color);
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.18);
   color: #fff;
-  display: inline-block;
-  background-color: var(--first-color);
-  font-weight: var(--font-bold);
-}
-
-@keyframes button-push {
-  50% {
-    transform: scale(0.8);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+  display: inline-flex;
+  font-weight: var(--font-semibold);
+  justify-content: center;
+  line-height: 1.2;
+  min-height: 48px;
+  padding: 0.85rem 1.4rem;
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
 }
 
 .btn:hover {
-  animation: button-push 0.3s linear 1;
+  background: var(--first-color-hover);
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.24);
+  transform: translateY(-2px);
 }
 
-/*=============== Link Styles ===============*/
-.link-text {
-  text-decoration: none;
-  transition: color 0.3s ease;
+.btn--secondary {
+  background: transparent;
+  border-color: var(--border-color);
+  box-shadow: none;
   color: var(--title-color);
 }
 
-/* Light Mode Link */
+.btn--secondary:hover {
+  background: var(--container-color);
+  border-color: var(--first-color);
+  color: var(--first-color);
+}
+
+.link-text {
+  color: var(--first-color);
+  transition: color 180ms ease;
+}
+
 .link-text:hover {
-  color: var(--first-color);
+  color: var(--first-color-hover);
 }
 
-/* Dark Mode Link */
-[data-theme="dark"] .link-text {
-  color: var(--text-color);
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 20px;
+  }
+
+  .section {
+    padding-top: 6rem;
+  }
+
+  .section__heading {
+    margin-bottom: 2.25rem;
+  }
 }
 
-[data-theme="dark"] .link-text:hover {
-  color: var(--first-color);
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

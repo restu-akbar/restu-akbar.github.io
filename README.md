@@ -10,9 +10,10 @@
 
 <br>
 
-## Credits
+## Development
 
-This website uses the template made by:
+Run the portfolio locally with Docker Compose:
 
-- [GregSithole](https://github.com/GregSithole)
-
+```sh
+make up
+```

@@ -12,88 +12,49 @@ const About = () => {
   };
   return (
     <section className="about container section" id="about">
-      <h2 className="section__title">About Me </h2>
+      <div className="section__heading">
+        <span className="section__eyebrow">About</span>
+        <h2 className="section__title">Engineering with purpose and ownership.</h2>
+        <p className="section__description">
+          I enjoy turning real requirements into reliable software and taking
+          responsibility across the delivery lifecycle.
+        </p>
+      </div>
 
       <div className="about__container grid">
-        <img src={Image} alt="" className="about__img" />
+        <div className="about__portrait">
+          <img src={Image} alt="Restu Akbar" className="about__img" />
+        </div>
 
-        <div className="about__data grid">
+        <div className="about__data">
           <div className="about__info">
             <p className="about__description">
-              Fresh graduate in Informatics Engineering from Politeknik Negeri
-              Bandung with hands-on experience building applications end-to-end
-              from planning and development to deployment through academic
-              projects, internships, and independent work. Skilled in writing
-              clean, scalable, and efficient code that follows industry
-              standards, with a strong interest in solving complex technical
-              challenges and optimizing system performance. Quick to adapt to
-              new technologies and driven to deliver meaningful contributions to
-              products with broad impact.
-              <br />
-              <br />
-              Here are some of the technologies I’ve been diving into recently:
+              An Informatics Engineering graduate from Politeknik Negeri
+              Bandung with hands-on experience building applications from
+              planning and development through deployment. My experience comes
+              from academic projects, internships, part-time work, and
+              independent projects.
             </p>
-            <div className="about__list-wrapper">
-              {Object.entries(groupedSkills).map(([category, items]) => (
-                <ul key={category} className="about__list">
-                  {items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              ))}
-            </div>
+            <p className="about__description">
+              I focus on clean, scalable code, thoughtful system performance,
+              and practical delivery. I adapt quickly to new technologies and
+              enjoy solving complex technical problems with a clear product
+              impact.
+            </p>
 
             <div className="resume-buttons">
               <button
                 className="btn btn-id"
                 onClick={() => downloadResume("id")}
               >
-                Download Resume (ID)
+                Resume — Indonesian
               </button>
               <button
                 className="btn btn-en"
                 onClick={() => downloadResume("en")}
               >
-                Download Resume (EN)
+                Resume — English
               </button>
-            </div>
-          </div>
-
-          <div className="about__skills grid">
-            <div className="skills__data">
-              <div className="skills__titles">
-                <h3 className="skills__name">
-                  Software Implementation (Coding)
-                </h3>
-                <span className="skills__number">100%</span>
-              </div>
-
-              <div className="skills__bar">
-                <span className="skills__percentage hundred"></span>
-              </div>
-            </div>
-
-            <div className="skills__data">
-              <div className="skills__titles">
-                <h3 className="skills__name">
-                  Software Deployment and Server Management
-                </h3>
-                <span className="skills__number">90%</span>
-              </div>
-
-              <div className="skills__bar">
-                <span className="skills__percentage ninety"></span>
-              </div>
-            </div>
-            <div className="skills__data">
-              <div className="skills__titles">
-                <h3 className="skills__name">Software Testing</h3>
-                <span className="skills__number">80%</span>
-              </div>
-
-              <div className="skills__bar">
-                <span className="skills__percentage eighty"></span>
-              </div>
             </div>
           </div>
         </div>
@@ -103,32 +64,5 @@ const About = () => {
     </section>
   );
 };
-
-const skills = [
-  { name: "Proxmox", category: "devops" },
-  { name: "Docker", category: "devops" },
-  { name: "Microsoft Azure", category: "devops" },
-  { name: "Debian Server", category: "devops" },
-  { name: "Nginx", category: "devops" },
-  { name: "On-Premises and Cloud Server Management", category: "devops" },
-  { name: "VueJs", category: "framework" },
-  { name: "NextJs", category: "framework" },
-  { name: "Spring Boot", category: "framework" },
-  { name: "NodeJs", category: "framework" },
-  { name: "Laravel", category: "framework" },
-  { name: "Kotlin (Compose Multiplatform)", category: "framework" },
-  { name: "Ktor (Kotlin Server Side)", category: "framework" },
-  { name: "Selenium (Python)", category: "framework" },
-  { name: "PostgreSQL", category: "database" },
-  { name: "MongoDB", category: "database" },
-  { name: "MySQL", category: "database" },
-  { name: "Redis", category: "database" },
-];
-
-const groupedSkills = skills.reduce((acc, skill) => {
-  acc[skill.category] = acc[skill.category] || [];
-  acc[skill.category].push(skill.name);
-  return acc;
-}, {});
 
 export default About;

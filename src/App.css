@@ -1,9 +1,7 @@
-.main {
-  margin-left: 110px;
+.app {
+  min-height: 100vh;
 }
 
-@media screen and (max-width: 1024px) {
-  .main {
-    margin-left: 0;
-  }
+.main {
+  margin-left: 0;
 }

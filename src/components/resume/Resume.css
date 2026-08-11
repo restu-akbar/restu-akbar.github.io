@@ -1,120 +1,118 @@
+.resume__container {
+  background: var(--container-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
 .tabs {
-  height: 100%;
-  display: flex;
-  position: relative;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.7fr) minmax(0, 1.8fr);
+  min-height: 430px;
 }
 
 .tab__list {
-  width: 15rem;
+  background: var(--surface-muted);
+  border-right: 1px solid var(--border-color);
+  padding: 1rem;
 }
 
-.tab__panel {
-  flex: 1;
-  display: none;
-  padding: 1.5rem 2rem;
-  background-color: var(--container-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-}
-
-.tab__panel.is-active {
-  display: block;
-}
-
-.tab__panel-list li {
-  position: relative;
-  padding-left: 20px;
-}
-
-.tab__panel-list li::before {
-  content: "▹";
-  position: absolute;
-  left: 0;
+.tab {
+  margin-bottom: 0.35rem;
 }
 
 .button {
-  display: inline-block;
-  width: 100%;
-  padding: 1rem 2rem;
-  background: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-bold);
-  color: var(--title-color);
+  background: transparent;
+  border-left: 3px solid transparent;
+  border-radius: 10px;
+  color: var(--muted-color);
+  font-size: 0.9rem;
+  font-weight: var(--font-semibold);
+  padding: 0.9rem 1rem;
   text-align: left;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+  width: 100%;
 }
 
-.tab:first-child .button {
-  border-top-left-radius: var(--border-radius);
-}
-
-.tab:last-child .button {
-  border-bottom-left-radius: var(--border-radius);
-}
-
-.button:focus,
 .button:hover {
-  outline: 0;
   color: var(--first-color);
 }
 
 .tab.is-active .button {
-  background-color: var(--container-color);
-  border-top-left-radius: var(--border-radius);
-  border-bottom-left-radius: var(--border-radius);
-  box-shadow: var(--shadow);
+  background: var(--container-color);
+  border-left-color: var(--first-color);
   color: var(--first-color);
 }
 
-.tab__panel:first-of-type.is-active,
-.tab__panel:last-child.is-active {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+.tab__panel {
+  display: none;
+  padding: clamp(1.5rem, 4vw, 3rem);
 }
 
-@media screen and (max-width: 768px) {
-  .resume__container {
-    max-width: 350px;
-    margin: 0 auto;
-  }
+.tab__panel.is-active {
+  animation: panel-in 220ms ease;
+  display: block;
+}
 
-  .tabs {
-    flex-wrap: wrap;
-  }
-
-  .tab__list {
-    width: 100vw;
-    margin-bottom: 1.25rem;
-  }
-
-  .tab__panel:first-of-type.is-active,
-  .tab__panel:last-child.is-active {
-    border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
-  }
-
-  .tab.is-active .button {
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-  }
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .tab__panel-title {
-  font-size: var(--h3-font-size);
-  margin-bottom: 1rem;
-  color: var(--title-color);
-}
-
-[data-theme="dark"] .tab__panel-title {
-  color: #fff;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  margin-bottom: 0.5rem;
 }
 
 .tab__panel-subtitle {
-  font-size: var(--normal-font-size);
-  margin-bottom: 1rem;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semibold);
+  margin-bottom: 1.75rem;
 }
 
-[data-theme="dark"] .tab__panel-subtitle {
-  color: #f8f9fa;
+.tab__panel-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.tab__panel-list li {
+  padding-left: 1.35rem;
+  position: relative;
+}
+
+.tab__panel-list li::before {
+  background: var(--accent-color);
+  border-radius: 50%;
+  content: "";
+  height: 6px;
+  left: 0;
+  position: absolute;
+  top: 0.65rem;
+  width: 6px;
+}
+
+@media (max-width: 760px) {
+  .tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .tab__list {
+    border-bottom: 1px solid var(--border-color);
+    border-right: 0;
+    display: flex;
+    gap: 0.4rem;
+    overflow-x: auto;
+  }
+
+  .tab {
+    flex: 0 0 min(72vw, 260px);
+    margin: 0;
+  }
+
+  .tab.is-active .button {
+    border-bottom-color: var(--first-color);
+    border-left-color: transparent;
+  }
 }

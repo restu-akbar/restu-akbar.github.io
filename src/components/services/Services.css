@@ -1,77 +1,90 @@
 .services__container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 kolom */
-  gap: 1.875rem; /* jarak antar kartu */
-  justify-content: center;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .services__card {
-  text-align: center;
-  padding: 1.875rem;
+  background: var(--container-color);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  background-color: var(--container-color);
-  transition: all 0.3s ease-in-out;
+  padding: 1.5rem;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .services__card:hover {
-  transform: translateY(-10px);
-}
-
-/* Warna spesifik untuk kartu */
-.services__card:nth-child(1) {
-  background-color: rgb(108, 108, 229);
-  box-shadow: 0 5px 20px 0 rgb(108, 108, 229 / 50%);
-}
-
-.services__card:nth-child(2) {
-  background-color: rgb(249, 215, 76);
-  box-shadow: 0 5px 20px 0 rgb(249, 215, 76 / 50%);
-}
-
-.services__card:nth-child(3) {
-  background-color: rgb(249, 123, 139);
-  box-shadow: 0 5px 20px 0 rgb(249, 123, 139 / 50%);
-}
-
-/* Tambahkan style untuk kartu ke-4 agar punya warna berbeda */
-.services__card:nth-child(4) {
-  background-color: rgb(100, 200, 150);
-  box-shadow: 0 5px 20px 0 rgb(100, 200, 150 / 50%);
+  border-color: color-mix(in srgb, var(--first-color) 42%, var(--border-color));
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
 }
 
 .services__img {
-  margin-bottom: 1.25rem;
+  background: var(--accent-soft);
+  border-radius: 14px;
+  height: 62px;
+  margin-bottom: 1.5rem;
+  object-fit: contain;
+  padding: 0.7rem;
+  width: 62px;
 }
 
 .services__title {
   font-size: var(--h3-font-size);
-  margin-bottom: 1rem;
-  color: #fff;
+  margin-bottom: 0.75rem;
 }
 
 .services__description {
-  color: #f8f9fa;
+  color: var(--text-color);
+  font-size: 0.92rem;
+  line-height: 1.65;
 }
 
-.services__card:nth-child(2) .services__title,
-.services__card:nth-child(2) .services__description {
-  color: var(--title-color);
+.technology__grid {
+  gap: 1rem;
+  grid-template-columns: 1.15fr 1.15fr 0.7fr;
+  margin-top: 1rem;
 }
 
-[data-theme="dark"] .services__card:nth-child(2) .services__title,
-[data-theme="dark"] .services__card:nth-child(2) .services__description {
-  color: var(--body-color);
+.technology__group {
+  background: var(--container-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
 }
 
-/* Responsif */
-@media screen and (max-width: 1024px) {
+.technology__group h3 {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.technology__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.technology__list span {
+  background: var(--surface-muted);
+  border-radius: 8px;
+  color: var(--text-color);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  padding: 0.4rem 0.65rem;
+}
+
+@media (max-width: 1024px) {
   .services__container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 760px) {
+  .technology__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
   .services__container {
-    grid-template-columns: 1fr; /* jadi 1 kolom di mobile */
+    grid-template-columns: 1fr;
   }
 }
