@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2e03998f.css",
-    "main.js": "/static/js/main.784b9b74.js",
+    "main.js": "/static/js/main.03967929.js",
     "static/media/bayarair6.png": "/static/media/bayarair6.9ed76c1e895c6c524991.png",
     "static/media/komdigi.png": "/static/media/komdigi.cbf40728711aeea84393.png",
     "static/media/geo.png": "/static/media/geo.0c4531971c4ec88158cc.png",
@@ -15,12 +15,12 @@
     "static/media/bayarair.png": "/static/media/bayarair.03983a00d8b27f66151b.png",
     "static/media/lahkerja.png": "/static/media/lahkerja.d670f0d7e55639e37901.png",
     "static/media/profil.png": "/static/media/profil.e405b6136497169d03f0.png",
-    "static/media/Restu Akbar-CV-EN.pdf": "/static/media/Restu Akbar-CV-EN.39b33253936a17098998.pdf",
-    "static/media/Restu Akbar-CV-ID.pdf": "/static/media/Restu Akbar-CV-ID.1b880378835f190999fd.pdf",
     "static/media/sikpk1.png": "/static/media/sikpk1.fd4e54abfed6f1962355.png",
     "static/media/srikandi3.png": "/static/media/srikandi3.0f4e4af1fce24b665a50.png",
+    "static/media/Restu Akbar-CV-EN.pdf": "/static/media/Restu Akbar-CV-EN.8f13f4f3cd1d0c27ca8c.pdf",
     "static/media/komdigi1.png": "/static/media/komdigi1.bb5fba71e2d416cd80c8.png",
     "static/media/profil-2.jpg": "/static/media/profil-2.e5aebe8d1671d1851d82.jpg",
+    "static/media/Restu Akbar-CV-ID.pdf": "/static/media/Restu Akbar-CV-ID.12bcfba0275626979f23.pdf",
     "static/media/lahkerja4.png": "/static/media/lahkerja4.57aef4dc48ff53dfded9.png",
     "static/media/sspm2.png": "/static/media/sspm2.7c6235b9857a2f4cff43.png",
     "static/media/pkm.png": "/static/media/pkm.c3bb69456cb7faa70c02.png",
@@ -53,10 +53,10 @@
     "static/media/service-4.svg": "/static/media/service-4.5f1f9c3ce79d5ce910bbc586489a0fc5.svg",
     "index.html": "/index.html",
     "main.2e03998f.css.map": "/static/css/main.2e03998f.css.map",
-    "main.784b9b74.js.map": "/static/js/main.784b9b74.js.map"
+    "main.03967929.js.map": "/static/js/main.03967929.js.map"
   },
   "entrypoints": [
     "static/css/main.2e03998f.css",
-    "static/js/main.784b9b74.js"
+    "static/js/main.03967929.js"
   ]
 }
