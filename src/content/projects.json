@@ -1,0 +1,344 @@
+[
+  {
+    "id": 1,
+    "title": "Poker CLI Game - Academic Project",
+    "category": [
+      "Other"
+    ],
+    "cover": "poker.png",
+    "gallery": [],
+    "description": "",
+    "contributions": [],
+    "tech": [
+      "C++",
+      "Pointer in C",
+      "Memory Management",
+      "Data Structure & Algorithms (Linked List, Queue, Stack, etc)"
+    ],
+    "url": "",
+    "repositoryUrl": "https://github.com/restu-akbar/poker-tongkrongan.git",
+    "status": "published"
+  },
+  {
+    "id": 2,
+    "title": "Exam CLI App - Academic Project",
+    "category": [
+      "Other"
+    ],
+    "cover": "exam.png",
+    "gallery": [],
+    "description": "",
+    "contributions": [],
+    "tech": [
+      "C++",
+      "Pointer in C",
+      "Memory Management",
+      "Data Structure (Linked List)"
+    ],
+    "url": "",
+    "repositoryUrl": "https://github.com/restu-akbar/Proyek2-C2.git",
+    "status": "published"
+  },
+  {
+    "id": 3,
+    "title": "Geolocation App - Dummy Project",
+    "category": [
+      "NodeJs"
+    ],
+    "cover": "geo.png",
+    "gallery": [],
+    "description": "A simple geolocation application that allows users to view and mark locations on an interactive map. This project is built with Express as the backend and LeafletJs for the map, designed to demonstrate basic location features and spatial data visualization in real time.",
+    "contributions": [],
+    "tech": [
+      "Express",
+      "LeafletJs"
+    ],
+    "url": "",
+    "repositoryUrl": "https://github.com/restu-akbar/sig-app.git",
+    "status": "published"
+  },
+  {
+    "id": 4,
+    "title": "PKM Management App - Academic Project",
+    "category": [
+      "Laravel"
+    ],
+    "cover": "pkm.png",
+    "gallery": [],
+    "description": "This website serves as a platform for the academic community of Politeknik Negeri Bandung to manage the submission of internal Program Kreativitas Mahasiswa (PKM) proposals. Through the system, students can submit proposals online, track their submission status, and receive feedback from reviewers.The platform also facilitates lecturers in reviewing, validating, and selecting proposals more efficiently and transparently. By streamlining these processes, the platform helps ensure a more structured and accountable selection system while supporting the improvement of both the quality and quantity of proposals advancing to national-level funding.",
+    "contributions": [],
+    "tech": [
+      "Fullstack Laravel",
+      "Bootstrap"
+    ],
+    "url": "",
+    "repositoryUrl": "https://github.com/restu-akbar/pkm-polban.git",
+    "status": "published"
+  },
+  {
+    "id": 5,
+    "title": "Srikandi App - Academic Project",
+    "category": [
+      "Kotlin"
+    ],
+    "cover": "srikandi/srikandi.png",
+    "gallery": [
+      "srikandi/srikandi.png",
+      "srikandi/srikandi1.png",
+      "srikandi/srikandi2.png",
+      "srikandi/srikandi3.png",
+      "srikandi/srikandi4.png"
+    ],
+    "description": "Srikandi is an mobile-based application developed for use within university environments. The platform is designed as a secure, confidential, and responsive reporting tool for incidents of violence, while also providing digital analysis features to help universities systematically map and address cases. Through Srikandi, users—including victims, witnesses, and relevant parties—can report incidents of violence. The system is equipped with supporting features such as psychological and legal assistance services, report status tracking, and educational modules for awareness and prevention.Srikandi aims to foster a safer, more inclusive, and violence-free campus environment, in line with the com",
+    "contributions": [],
+    "tech": [
+      "Jetpack Compose",
+      "Clean Architecture",
+      "Ktor",
+      "Dependency Injection (Koin & Dagger Hilt)"
+    ],
+    "url": "",
+    "repositoryUrl": "https://github.com/DzakiNurhidayat/srikandi-app",
+    "status": "published"
+  },
+  {
+    "id": 6,
+    "title": "SSPM - Intern Project",
+    "category": [
+      "Laravel"
+    ],
+    "cover": "sspm/sspm.png",
+    "gallery": [
+      "sspm/sspm.png",
+      "sspm/sspm1.png",
+      "sspm/sspm2.png",
+      "sspm/sspm3.png",
+      "sspm/sspm4.png"
+    ],
+    "description": "The Tax Period Notification System (SSPM) AkuPrim is a web application developed to support tax data recording and management for AkuPrim, a tax consulting firm, in serving their clients. The application includes features such as income tax (PPh) and value-added tax (VAT) recording, invoice reporting, and other tax documentation required by consultants. In this project, I served as a Fullstack Developer.",
+    "contributions": [
+      "Integrated Laravel Excel for data import and export features",
+      "Developed email functionality using Laravel’s mailing system",
+      "Built frontend components with Laravel Livewire"
+    ],
+    "tech": [
+      "Laravel Livewire",
+      "Laravel Maatwebsite Excel",
+      "Yajra Datatables",
+      "Laravel Email"
+    ],
+    "url": "https://www.progantara.com/#projects",
+    "repositoryUrl": "",
+    "status": "published"
+  },
+  {
+    "id": 7,
+    "title": "Lah Kerja - Intern Project",
+    "category": [
+      "Laravel"
+    ],
+    "cover": "lah-kerja/lahkerja.png",
+    "gallery": [
+      "lah-kerja/lahkerja.png",
+      "lah-kerja/lahkerja1.png",
+      "lah-kerja/lahkerja2.png",
+      "lah-kerja/lahkerja3.png",
+      "lah-kerja/lahkerja4.png",
+      "lah-kerja/lahkerja5.png",
+      "lah-kerja/lahkerja6.png"
+    ],
+    "description": "Lah Kerja is an integrated web and mobile application designed to support human resource (HR) management. The platform streamlines administrative processes such as attendance, overtime, leave, and employee loans, while improving efficiency, data accuracy, and accessibility for both management and employees. In this project, I served as a Backend Developer and DevOps Engineer.",
+    "contributions": [
+      "Implemented backend logic using Laravel.",
+      "Designed and developed RESTful APIs for mobile and web application integration.",
+      "Collaborated with the frontend team by providing API documentation via Postman and integration support.",
+      "Designed and optimized database schemas using MySQL.",
+      "Configured CI/CD pipelines (GitHub CI/CD) to automate deployments.",
+      "Managed and maintained production servers in a Linux environment with cPanel monitoring"
+    ],
+    "tech": [
+      "Laravel Api",
+      "Yajra Datatables",
+      "Laravel Scheduler using Cron Job",
+      "Hostinger CPanel & SSH ",
+      "GitHub Actions"
+    ],
+    "url": "https://lahkerja-dev.progantara.com/",
+    "repositoryUrl": "",
+    "status": "published"
+  },
+  {
+    "id": 8,
+    "title": "Atisisbada - Automated Testing",
+    "category": [
+      "Other"
+    ],
+    "cover": "atisisbada/atisisbada.png",
+    "gallery": [
+      "atisisbada/atisisbada.png",
+      "atisisbada/atisisbada1.png",
+      "atisisbada/atisisbada2.png",
+      "atisisbada/atisisbada3.png"
+    ],
+    "description": "In this project, I served as a QA Tester, focusing on automated testing using Selenium (Python) for ATISISBADA (Regional Asset Management Information System). This application is used by local governments in Indonesia to manage the entire lifecycle of regional assets, including procurement, utilization, maintenance, and disposal.",
+    "contributions": [
+      "Designed, developed, and executed automated test scripts to validate application functionality.",
+      "Enhanced testing efficiency while reducing reliance on manual testing.",
+      "Accelerated the testing process and ensured consistent results using Selenium (Python).",
+      "Identified defects at early development stages, minimizing risks in production.",
+      "Contributed to software quality improvement and ensured application compliance with functional standards."
+    ],
+    "tech": [
+      "Selenium",
+      "Python Unittest"
+    ],
+    "url": "",
+    "repositoryUrl": "https://github.com/restu-akbar/atisisbada-test.git",
+    "status": "published"
+  },
+  {
+    "id": 9,
+    "title": "Bayar Air - Intern Project",
+    "category": [
+      "Laravel",
+      "Kotlin"
+    ],
+    "cover": "bayar-air/bayarair.png",
+    "gallery": [
+      "bayar-air/bayarair.png",
+      "bayar-air/bayarair1.png",
+      "bayar-air/bayarair2.png",
+      "bayar-air/bayarair3.png",
+      "bayar-air/bayarair4.png",
+      "bayar-air/bayarair5.png",
+      "bayar-air/bayarair6.png"
+    ],
+    "description": "Bayar Air is a mobile-based application developed to simplify and modernize the process of recording water meter usage in a practical, secure, and transparent way. The platform is designed to give users real-time access to their recorded data, ensuring accuracy and reducing manual errors in the billing process. I contributed as a Backend Developer, Mobile Developer, and DevOps Engineer.",
+    "contributions": [
+      "Designed and developed a mobile-based application for water meter recording.",
+      "Implemented features to log and store water usage data.",
+      "Built interface with Compose Multiplatform.",
+      "Designed and optimized database schemas using MySQL.",
+      "Developed RESTful APIs using laravel.",
+      "Applied Koin for dependency injection to improve modularity and scalability.",
+      "Configured CI/CD pipelines (GitHub CI/CD) to automate deployments.",
+      "Managed and maintained production servers in a Linux environment with cPanel monitoring"
+    ],
+    "tech": [
+      "Kotlin Compose Multiplatform",
+      "Koin Dependency Injection",
+      "Ktor & HTTP Client",
+      "Clean Architecture",
+      "Laravel Api",
+      "Hostinger CPanel & SSH ",
+      "GitHub Actions"
+    ],
+    "url": "https://bayarair.progantara.com",
+    "repositoryUrl": "https://github.com/restu-akbar/bayar-air-app.git",
+    "status": "published"
+  },
+  {
+    "id": 10,
+    "title": "Profiling & Dashboard Kepatuhan Komdigi",
+    "category": [
+      "Laravel"
+    ],
+    "cover": "komdigi/komdigi.png",
+    "gallery": [
+      "komdigi/komdigi.png",
+      "komdigi/komdigi1.png",
+      "komdigi/komdigi2.png",
+      "komdigi/komdigi3.png"
+    ],
+    "description": "Profiling Komdigi is an application used to display profiles of broadcasting, postal, and telecommunications companies registered at Komdigi. The application presents detailed company data sourced from Komdigi Datahub. Dashboard Kepatuhan is a Komdigi application that displays annual compliance reports of companies toward Komdigi regulations. I contributed as a Fullstack Developer focusing on API updates and data integration.",
+    "contributions": [
+      "Updated Profiling Komdigi APIs to support company profile data for broadcasting, postal, and telecommunications sectors.",
+      "Identified and integrated data sources from Komdigi Datahub for use in Profiling and Dashboard Kepatuhan applications.",
+      "Developed and improved APIs to display annual compliance report data on the Dashboard Kepatuhan.",
+      "Ensured data consistency and accuracy between Datahub Komdigi and application services.",
+      "Maintained and optimized backend services using Laravel."
+    ],
+    "tech": [
+      "Laravel API",
+      "Laravel Scheduler",
+      "RESTful API",
+      "MySQL",
+      "GitHub"
+    ],
+    "url": "https://datahub.komdigi.go.id/",
+    "repositoryUrl": "",
+    "status": "published"
+  },
+  {
+    "id": 11,
+    "title": "Atisisbada Content Management System",
+    "category": [
+      "NodeJs"
+    ],
+    "cover": "atisisbada-page/atisisbada.png",
+    "gallery": [
+      "atisisbada-page/atisisbada.png"
+    ],
+    "description": "Atisisbada CMS is a content management system designed to manage and customize a dynamic landing page efficiently. The system enables administrators to control page content, sections, layouts, and media assets through an intuitive web-based interface without requiring direct code modifications.",
+    "contributions": [
+      "Developed a dynamic landing page using Next.js.",
+      "Built CMS features to manage landing page sections and content.",
+      "Deployed and managed the application server via SSH.",
+      "Configured and maintained production environment for the Next.js application."
+    ],
+    "tech": [
+      "Next.js",
+      "React",
+      "Node.js",
+      "SSH",
+      "Proxmox Server",
+      "GitHub CI/CD",
+      "BetterAuth"
+    ],
+    "url": "https://dev-atis-landingpage.atisisbada.id/",
+    "repositoryUrl": "",
+    "status": "published"
+  },
+  {
+    "id": 12,
+    "title": "SIKPK – Violence Reporting and Case Handling Information System",
+    "category": [
+      "Laravel"
+    ],
+    "cover": "sikpk/sikpk.png",
+    "gallery": [
+      "sikpk/sikpk.png",
+      "sikpk/sikpk1.png",
+      "sikpk/sikpk2.png",
+      "sikpk/sikpk3.png",
+      "sikpk/sikpk4.png"
+    ],
+    "description": "SIKPK is a secure web-based information system developed for Politeknik Negeri Bandung to manage reports and cases involving violence within the campus environment. The application enables members of the academic community to confidentially submit reports and supporting evidence, track case progress, and communicate with the PPKPT Task Force. It also provides authorized officers with tools to manage reports through clarification, examination, conclusion, post-handling, and archival stages.",
+    "contributions": [
+      "Developed a responsive public landing page and reporting portal.",
+      "Built confidential report submission and case-progress tracking features.",
+      "Developed role-based dashboards and report management workflows for the PPKPT Task Force.",
+      "Implemented case-handling stages covering clarification, examination, conclusion, post-handling, and archival.",
+      "Implemented client-side hybrid encryption using AES-GCM and RSA-OAEP to protect report narratives, evidence, documents, and audio recordings.",
+      "Integrated Google OAuth authentication for reporters and secure authentication for task force members.",
+      "Built user management, document management, reporting dashboards, and PDF generation features.",
+      "Containerized the application using Docker."
+    ],
+    "tech": [
+      "Laravel",
+      "Vue.js",
+      "TypeScript",
+      "Inertia.js",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Laravel Socialite",
+      "Google OAuth",
+      "Web Crypto API",
+      "Docker",
+      "GitHub Actions CI/CD"
+    ],
+    "url": "https://sikpk-app.calmbush-8824c64a.southeastasia.azurecontainerapps.io/",
+    "repositoryUrl": "",
+    "status": "published"
+  }
+]

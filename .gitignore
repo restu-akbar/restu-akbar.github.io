@@ -24,3 +24,10 @@ yarn-debug.log*
 yarn-error.log*
 
 /graphify-out
+
+# Cloudflare
+/cloudflare/node_modules
+/cloudflare/seed/out
+.wrangler
+.dev.vars
+.wrangler-state

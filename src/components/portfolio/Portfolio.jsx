@@ -1,26 +1,31 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  RiLink,
-  RiGithubLine,
   RiCloseLine,
   RiArrowLeftSLine,
   RiArrowRightSLine,
 } from "react-icons/ri";
 import "./Portfolio.css";
-import Menu from "./Menu";
+import { useContent } from "../../content/ContentContext";
 
 const sortByIdDesc = (arr) => [...arr].sort((a, b) => b.id - a.id);
 
-const allCategories = [
-  "All",
-  ...new Set(Menu.flatMap((item) => item.category)),
-].sort();
-
 const Portfolio = () => {
-  const [items, setItems] = useState(sortByIdDesc(Menu));
-  const [activeFilter, setActiveFilter] = useState(0);
-  const [filterKey, setFilterKey] = useState(0);
+  const { projects } = useContent();
+  const [activeCategory, setActiveCategory] = useState("All");
+  const allCategories = useMemo(
+    () => ["All", ...new Set(projects.flatMap((p) => p.category))].sort(),
+    [projects],
+  );
+  const items = useMemo(
+    () =>
+      sortByIdDesc(
+        activeCategory === "All"
+          ? projects
+          : projects.filter((p) => p.category.includes(activeCategory)),
+      ),
+    [projects, activeCategory],
+  );
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,14 +33,6 @@ const Portfolio = () => {
 
   const MAX_ITEMS = 9;
   const itemsToShow = showAll ? items : items.slice(0, MAX_ITEMS);
-
-  const filterItems = (categoryItem) => {
-    const updatedItems = Menu.filter((curElem) =>
-      curElem.category.includes(categoryItem),
-    );
-    setItems(sortByIdDesc(updatedItems));
-    setFilterKey((prev) => prev + 1);
-  };
 
   const openModal = useCallback((item) => {
     setSelectedItem(item);
@@ -78,122 +75,74 @@ const Portfolio = () => {
 
   return (
     <section className="portfolio container section" id="portfolio">
-      <div className="section__heading">
-        <span className="section__eyebrow">Projects</span>
-        <h2 className="section__title">Selected work and case studies.</h2>
-        <p className="section__description">
-          Academic, internship, and professional projects across web, mobile,
-          backend, testing, and infrastructure.
-        </p>
-      </div>
+      <span className="section__eyebrow">02 · Selected work</span>
+      <h2 className="section__title">Systems I&apos;ve built and shipped.</h2>
+      <p className="section__intro">
+        Web, mobile and backend projects for campuses and companies, some live
+        today. Open any project for the stack and screenshots.
+      </p>
 
-      <div className="portfolio__filters">
-        {allCategories.map((cat, idx) => (
-          <button
-            key={cat}
-            type="button"
-            className={
-              activeFilter === idx
-                ? "portfolio__item portfolio__item-active"
-                : "portfolio__item"
-            }
-            aria-pressed={activeFilter === idx}
-            onClick={() => {
-              setShowAll(false);
-              if (cat === "All") {
-                setItems(sortByIdDesc(Menu));
-                setFilterKey((prev) => prev + 1);
-              } else {
-                filterItems(cat);
+      <div className="portfolio__main">
+        <div className="portfolio__filters mono">
+          {allCategories.map((cat) => (
+            <button
+              key={cat}
+              type="button"
+              className={
+                activeCategory === cat
+                  ? "portfolio__item portfolio__item-active"
+                  : "portfolio__item"
               }
-              setActiveFilter(idx);
-            }}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+              aria-pressed={activeCategory === cat}
+              onClick={() => {
+                setShowAll(false);
+                setActiveCategory(cat);
+              }}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
-      <div className="portfolio__container grid">
-        <AnimatePresence mode="wait">
+        <ul className="portfolio__list">
           {itemsToShow.map((elem) => {
-            const { id, image, title, category, url, repositoryUrl } = elem;
-
+            const { id, title, category, url, repositoryUrl, image } = elem;
             return (
-              <motion.div
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-                className="portfolio__card"
-                key={`${filterKey}-${id}`}
-              >
+              <li className="project" key={id}>
                 <button
-                  className="portfolio__thumbnail"
+                  className="project__open"
                   onClick={() => openModal(elem)}
-                  aria-label={`Lihat galeri untuk ${title}`}
+                  aria-label={`Details for ${title}`}
                 >
-                  <img
-                    src={image}
-                    alt={title}
-                    className="portfolio__img"
-                    height="267"
-                  />
-                  <span className="portfolio__mask">View details</span>
+                  <img className="project__thumb" src={image} alt="" loading="lazy" />
+                  <span className="project__title">{title}</span>
                 </button>
-
-                <div className="portfolio__content">
-                  <div className="portfolio__categories">
-                    {category.map((item) => (
-                      <span className="portfolio__category" key={item}>
-                        {item}
-                      </span>
+                <div className="project__foot">
+                  <span className="project__tags">
+                    {category.map((c) => (
+                      <span className="tag" key={c}>{c}</span>
                     ))}
-                  </div>
-                  <h3 className="portfolio__title">{title}</h3>
-                  <div className="portfolio__actions">
+                  </span>
+                  <span className="project__links mono">
                     {url && (
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="portfolio__button"
-                        aria-label="Buka project"
-                      >
-                        <RiLink className="portfolio__button-icon" />
-                        <span>Live project</span>
-                      </a>
+                      <a className="text-link" href={url} target="_blank" rel="noreferrer">live</a>
                     )}
                     {repositoryUrl && (
-                      <a
-                        href={repositoryUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="portfolio__github-button"
-                        aria-label="Buka repository"
-                      >
-                        <RiGithubLine className="portfolio__button-icon" />
-                        <span>Repository</span>
-                      </a>
+                      <a className="text-link" href={repositoryUrl} target="_blank" rel="noreferrer">code</a>
                     )}
-                  </div>
+                  </span>
                 </div>
-              </motion.div>
+              </li>
             );
           })}
-        </AnimatePresence>
-      </div>
-      {items.length > MAX_ITEMS && !showAll && (
-        <div className="portfolio__more">
-          <button
-            className="portfolio__more-btn"
-            onClick={() => setShowAll(true)}
-          >
-            View all projects
+        </ul>
+
+        {items.length > MAX_ITEMS && !showAll && (
+          <button className="btn portfolio__more" onClick={() => setShowAll(true)}>
+            Show all {items.length} projects
           </button>
-        </div>
-      )}
+        )}
+      </div>
 
       <AnimatePresence>
         {isModalOpen && selectedItem && (
@@ -307,7 +256,7 @@ const ModalGallery = ({
           <div className="modal__contribs">
             <h4>Project Url</h4>
             <a
-              className="modal__desc link-text"
+              className="modal__desc text-link"
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"

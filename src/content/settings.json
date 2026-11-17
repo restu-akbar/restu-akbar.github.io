@@ -1,0 +1,75 @@
+{
+  "name": "Restu Akbar",
+  "role": "Forward deployed engineer",
+  "email": "restu.akbar.03.04@gmail.com",
+  "hero": {
+    "status": "Available for new work · Bandung, Indonesia",
+    "headline": "I embed with your team and ship what actually works.",
+    "lead": "I'm Restu Akbar, a forward deployed engineer. I work close to the people who use the software, figure out what they really need, then build it, deploy it and keep it running, from the API to the server it lives on.",
+    "capabilities": [
+      {
+        "title": "Back-office systems & APIs",
+        "text": "Laravel, Spring Boot, Node.js with clean REST APIs and clear docs for your frontend team."
+      },
+      {
+        "title": "Deployment & CI/CD",
+        "text": "Docker, Nginx and automated pipelines, so releases are routine instead of risky."
+      },
+      {
+        "title": "Server operations",
+        "text": "Production and on-premises servers: monitoring, backups, security updates."
+      },
+      {
+        "title": "Mobile apps",
+        "text": "Kotlin and Jetpack Compose apps built on clean architecture."
+      }
+    ]
+  },
+  "approach": {
+    "title": "Close to the problem, from first call to production.",
+    "intro": "The gap between \"the software exists\" and \"it works for the people using it\" is where I spend my time.",
+    "steps": [
+      {
+        "title": "Listen first",
+        "text": "I spend time with the people who do the work, so I solve the real problem before picking any technology."
+      },
+      {
+        "title": "Build the smallest thing that works",
+        "text": "A working slice early on, whether an API, a back-office tool, a CMS or a mobile app, so feedback comes from real use."
+      },
+      {
+        "title": "Deploy it myself",
+        "text": "CI/CD, containers and production servers. Done means running in production, not merged."
+      },
+      {
+        "title": "Stay and keep it healthy",
+        "text": "Monitoring, backups, security updates and fixes after launch, because the work doesn't end at go-live."
+      }
+    ]
+  },
+  "about": {
+    "paragraphs": [
+      "I graduated in Informatics Engineering from Politeknik Negeri Bandung and learned most of what I know by building real systems: campus platforms, an internship, part-time jobs and client work, from the first conversation through to the server they run on.",
+      "I'm most useful where requirements are still fuzzy and the work crosses boundaries: code, deployment, and the people who depend on both. I've also taught Java, so explaining technical things in plain language comes naturally."
+    ]
+  },
+  "socials": [
+    {
+      "label": "github",
+      "url": "https://www.github.com/restu-akbar"
+    },
+    {
+      "label": "linkedin",
+      "url": "https://www.linkedin.com/in/restuakbar"
+    },
+    {
+      "label": "gitlab",
+      "url": "https://www.gitlab.com/akbarst3"
+    }
+  ],
+  "cv": {
+    "en": "Restu Akbar-CV-EN.pdf",
+    "id": "Restu Akbar-CV-ID.pdf"
+  },
+  "photo": "profil-clean.jpg"
+}

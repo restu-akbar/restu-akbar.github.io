@@ -1,0 +1,5 @@
+[
+  { "id": 1, "title": "Application", "items": ["Laravel", "Spring Boot", "Node.js", "Vue.js", "Next.js", "Kotlin", "Ktor", "Selenium"] },
+  { "id": 2, "title": "Infrastructure", "items": ["Proxmox", "Docker", "Microsoft Azure", "Debian Server", "Nginx", "CI/CD"] },
+  { "id": 3, "title": "Data", "items": ["PostgreSQL", "MongoDB", "MySQL", "Redis"] }
+]

@@ -1,0 +1,19 @@
+{
+  "name": "restuakbar-cloudflare",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed:build": "node seed/build-seed.mjs",
+    "db:migrate:local": "wrangler d1 execute restu-akbar-cms --local --file migrations/0001_init.sql --config pages/wrangler.jsonc --persist-to .wrangler-state",
+    "db:seed:local": "wrangler d1 execute restu-akbar-cms --local --file seed/out/seed.sql --config pages/wrangler.jsonc --persist-to .wrangler-state",
+    "db:migrate:remote": "wrangler d1 execute restu-akbar-cms --remote --file migrations/0001_init.sql --config pages/wrangler.jsonc",
+    "db:seed:remote": "wrangler d1 execute restu-akbar-cms --remote --file seed/out/seed.sql --config pages/wrangler.jsonc",
+    "dev:site": "cd pages && wrangler pages dev ../../build --d1 DB=408289e1-2758-4542-a79f-21c0b3b294bb --r2 MEDIA=restu-akbar-media --persist-to ../.wrangler-state --port 8787",
+    "dev:admin": "wrangler dev --config admin-worker/wrangler.jsonc --persist-to .wrangler-state --var ENVIRONMENT:dev --var SITE_URL:http://localhost:8787 --port 8788 --inspector-port 9230",
+    "deploy:site": "cd pages && wrangler pages deploy ../../build --project-name restu-akbar --branch main",
+    "deploy:admin": "wrangler deploy --config admin-worker/wrangler.jsonc"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

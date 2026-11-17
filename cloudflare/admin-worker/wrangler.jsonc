@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "restu-akbar-admin",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-01",
+  // Protect this Worker with Cloudflare Access (Workers & Pages -> this Worker ->
+  // Settings -> Domains & Routes -> Cloudflare Access). The Worker also verifies the
+  // Access JWT itself, so a misconfigured Access policy fails closed.
+  "assets": {
+    "directory": "./public",
+    // Only the API runs the Worker (and the JWT check); the static UI is served by assets,
+    // behind the same Cloudflare Access gate.
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    "SITE_URL": "https://restu-akbar.pages.dev",
+    "TEAM_DOMAIN": "curly-frog-a7d5.cloudflareaccess.com",
+    "POLICY_AUD": "3a0bfa212e25a3e391677db608b65ff684336c76e1bf5e4ae0ebe2523cd19e01"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "restu-akbar-cms",
+      "database_id": "408289e1-2758-4542-a79f-21c0b3b294bb"
+    }
+  ],
+  "r2_buckets": [
+    { "binding": "MEDIA", "bucket_name": "restu-akbar-media" }
+  ]
+}

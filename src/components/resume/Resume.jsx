@@ -1,73 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Resume.css";
-import "../../index.css";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import Button from "./Button";
-
-import WorkExperience from "./WorkExperience";
+import { useContent } from "../../content/ContentContext";
 
 const Resume = () => {
-  const [tabIndex, setTabIndex] = useState(0);
-
-  const sortedExperience = [...WorkExperience].sort((a, b) => b.id - a.id);
+  const { experience } = useContent();
+  const entries = [...experience].sort((a, b) => b.id - a.id);
 
   return (
     <section className="resume container section" id="resume">
-      <div className="section__heading">
-        <span className="section__eyebrow">Experience</span>
-        <h2 className="section__title">Work and education timeline.</h2>
-        <p className="section__description">
-          Roles and learning experiences that shaped how I build, deploy, and
-          maintain software.
-        </p>
-      </div>
+      <span className="section__eyebrow">03 · Experience</span>
+      <h2 className="section__title">Where I&apos;ve worked.</h2>
+      <p className="section__intro">
+        Roles where I built the features and also ran the infrastructure they
+        depend on.
+      </p>
 
-      <div className="resume__container">
-        <Tabs
-          className="tabs"
-          selectedIndex={tabIndex}
-          onSelect={(index) => setTabIndex(index)}
-          selectedTabClassName={"is-active"}
-          selectedTabPanelClassName={"is-active"}
-        >
-          <TabList className="tab__list">
-            {sortedExperience.map((experience) => {
-              const { id, company } = experience;
-              return (
-                <Tab className="tab" key={`company-${id}`}>
-                  <Button>{company}</Button>
-                </Tab>
-              );
-            })}
-          </TabList>
-
-          {sortedExperience.map((experience) => {
-            const { id, company, yearsActive, title, information, link } =
-              experience;
-            return (
-              <TabPanel className="tab__panel" key={`panel-${id}`}>
-                <h2 className="tab__panel-title">
-                  {title} @{" "}
-                  <a
-                    className="link-text"
-                    href={link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {company}
-                  </a>
-                </h2>
-                <p className="tab__panel-subtitle">{yearsActive}</p>
-                <ul className="tab__panel-list">
-                  {information.map((info, index) => (
-                    <li key={`info-${index}`}>{info}</li>
-                  ))}
-                </ul>
-              </TabPanel>
-            );
-          })}
-        </Tabs>
-      </div>
+      <ol className="jobs">
+        {entries.map(({ id, company, yearsActive, title, information, link }) => (
+          <li className="job" key={id}>
+            <p className="job__years mono">{yearsActive}</p>
+            <h3 className="job__title">
+              {title},{" "}
+              <a className="text-link" href={link} target="_blank" rel="noreferrer">
+                {company}
+              </a>
+            </h3>
+            <ul className="job__list">
+              {information.map((info, i) => (
+                <li key={i}>{info}</li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ol>
     </section>
   );
 };

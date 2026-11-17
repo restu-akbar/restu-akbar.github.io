@@ -1,0 +1,82 @@
+name: Build & deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# One deploy at a time per ref; a newer push waits instead of cancelling a deploy in progress.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            cloudflare/package-lock.json
+
+      - name: Install
+        run: |
+          npm ci
+          npm ci --prefix cloudflare
+
+      # CRA treats warnings as errors when CI=true, so lint problems fail the build here.
+      - name: Build site
+        run: npm run build
+
+      - name: Check admin and Workers
+        run: |
+          node --check cloudflare/admin-worker/public/app.js
+          node cloudflare/seed/build-seed.mjs
+          cd cloudflare && npx wrangler deploy --config admin-worker/wrangler.jsonc --dry-run --outdir "$RUNNER_TEMP/admin-dry-run"
+
+      # ---- everything below only runs for pushes to main ----
+      - name: Require Cloudflare credentials
+        if: github.event_name != 'pull_request'
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::Add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID as repository secrets (Settings > Secrets and variables > Actions)."
+            exit 1
+          fi
+
+      - name: Deploy public site (Cloudflare Pages)
+        if: github.event_name != 'pull_request'
+        run: npm run deploy:site --prefix cloudflare
+
+      - name: Deploy admin (Worker)
+        if: github.event_name != 'pull_request'
+        run: npm run deploy:admin --prefix cloudflare
+
+      - name: Smoke test
+        if: github.event_name != 'pull_request'
+        run: |
+          site=https://restu-akbar.pages.dev
+          admin=https://restu-akbar-admin.restu-akbar-03-04.workers.dev
+          for i in 1 2 3 4 5 6; do
+            if curl -fsS "$site/" -o /dev/null && curl -fsS "$site/api/content" | node -e "
+              let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const c=JSON.parse(s);process.exit(c.projects.length>0&&c.settings.hero?0:1)})"; then
+              ok=1; break
+            fi
+            echo "site not ready yet (attempt $i)"; sleep 10
+          done
+          [ "${ok:-}" = 1 ] || { echo "::error::Site or /api/content check failed"; exit 1; }
+          # The admin must be gated: a redirect to Access login (302) or a 401/403, never content.
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$admin/api/admin/projects")
+          case "$code" in 302|401|403) echo "admin gated ($code)";; *) echo "::error::Admin API returned $code without login"; exit 1;; esac

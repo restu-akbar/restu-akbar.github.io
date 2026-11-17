@@ -1,100 +1,54 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
 
-import {
-    RiHome2Line,
-    RiUser3Line,
-    RiBriefcase2Line,
-    RiStackLine,
-    RiChat3Line,
-    RiFileList3Line,
-    RiMoonLine,
-    RiSunLine,
-    RiMenu2Line,
-} from "react-icons/ri";
+const links = [
+  ["approach", "How I work"],
+  ["portfolio", "Work"],
+  ["resume", "Experience"],
+  ["about", "About"],
+];
 
+const Sidebar = ({ theme, switchTheme }) => {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
 
-const Sidebar = (props) => {
-    const [toggle, showMenu] = useState(false);
-    const closeMenu = () => showMenu(false);
+  return (
+    <header className="header">
+      <div className="header__inner container">
+        <a href="#home" className="header__name" onClick={close}>
+          Restu Akbar
+          <span>Forward deployed engineer</span>
+        </a>
 
-    return (
-        <>
-            <aside className={toggle ? "aside show-menu" : "aside"}>
-                <a href="#home" className="nav__logo" onClick={closeMenu}>
-                    <span className="nav__monogram">RA</span>
-                    <span className="nav__brand">Restu Akbar</span>
-                </a>
+        <button
+          className="header__toggle"
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-label="Toggle navigation"
+        >
+          {open ? "Close" : "Menu"}
+        </button>
 
-                <nav className="nav">
-                    <div className="nav__menu">
-                        <ul className="nav__list">
-                            <li className="nav__item">
-                                <a href="#home" className="nav__link" onClick={closeMenu}>
-                                    <RiHome2Line />
-                                    <span>Home</span>
-                                </a>
-                            </li>
-
-                            <li className="nav__item">
-                                <a href="#about" className="nav__link" onClick={closeMenu}>
-                                    <RiUser3Line />
-                                    <span>About</span>
-                                </a>
-                            </li>
-
-                            <li className="nav__item">
-                                <a href="#skills" className="nav__link" onClick={closeMenu}>
-                                    <RiFileList3Line />
-                                    <span>Skills</span>
-                                </a>
-                            </li>
-
-                            <li className="nav__item">
-                                <a href="#resume" className="nav__link" onClick={closeMenu}>
-                                    <RiBriefcase2Line />
-                                    <span>Experience</span>
-                                </a>
-                            </li>
-
-                            <li className="nav__item">
-                                <a href="#portfolio" className="nav__link" onClick={closeMenu}>
-                                    <RiStackLine />
-                                    <span>Projects</span>
-                                </a>
-                            </li>
-
-                            <li className="nav__item">
-                                <a href="#contact" className="nav__link" onClick={closeMenu}>
-                                    <RiChat3Line />
-                                    <span>Contact</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-
-                <div className="nav__footer">
-                    <button
-                        onClick={props.switchTheme}
-                        className="nav__link footer__button"
-                        aria-label={props.theme === "light" ? "Use dark theme" : "Use light theme"}
-                    >
-                        {props.theme === 'light' ? <RiMoonLine /> : <RiSunLine />}
-                    </button>
-                </div>
-            </aside>
-
-            <button
-                className={toggle ? "nav__toggle nav__toggle-open" : "nav__toggle"}
-                onClick={() => showMenu(!toggle)}
-                aria-label="Toggle navigation"
-                aria-expanded={toggle}
-            >
-                <RiMenu2Line />
-            </button>
-        </>
-    );
+        <nav className={open ? "header__nav is-open" : "header__nav"}>
+          {links.map(([id, label]) => (
+            <a key={id} href={`#${id}`} onClick={close}>
+              {label}
+            </a>
+          ))}
+          <button
+            className="header__theme"
+            onClick={switchTheme}
+            aria-label={theme === "light" ? "Use dark theme" : "Use light theme"}
+          >
+            {theme === "light" ? "Dark" : "Light"}
+          </button>
+          <a href="#contact" className="btn header__cta" onClick={close}>
+            Get in touch
+          </a>
+        </nav>
+      </div>
+    </header>
+  );
 };
 
 export default Sidebar;

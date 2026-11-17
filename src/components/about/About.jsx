@@ -1,66 +1,67 @@
 import React from "react";
 import "./About.css";
-import Image from "../../assets/profil-2.jpg";
-import ResumeID from "../../assets/Restu Akbar-CV-ID.pdf";
-import ResumeEN from "../../assets/Restu Akbar-CV-EN.pdf";
-import AboutBox from "./AboutBox";
+import { useContent } from "../../content/ContentContext";
+
+const DocIcon = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+    <path d="M14 3v5h5" />
+    <path d="M9 13h6M9 17h4" />
+  </svg>
+);
+
+const DownloadIcon = () => (
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M12 4v11" />
+    <path d="m7 11 5 5 5-5" />
+    <path d="M5 20h14" />
+  </svg>
+);
+
+const CV_LANGUAGES = [
+  ["en", "English"],
+  ["id", "Bahasa Indonesia"],
+];
 
 const About = () => {
-  const downloadResume = async (lang) => {
-    const file = lang === "id" ? ResumeID : ResumeEN;
-    window.open(file, "_blank");
-  };
+  const { settings } = useContent();
+  const cvs = CV_LANGUAGES.filter(([key]) => settings.cv?.[key]);
+
   return (
     <section className="about container section" id="about">
-      <div className="section__heading">
-        <span className="section__eyebrow">About</span>
-        <h2 className="section__title">Engineering with purpose and ownership.</h2>
-        <p className="section__description">
-          I enjoy turning real requirements into reliable software and taking
-          responsibility across the delivery lifecycle.
-        </p>
-      </div>
+      <span className="section__eyebrow">04 · About</span>
+      <h2 className="section__title">A bit about me.</h2>
 
-      <div className="about__container grid">
-        <div className="about__portrait">
-          <img src={Image} alt="Restu Akbar" className="about__img" />
+      <div className="about__body">
+        <div className="about__text">
+          {settings.about.paragraphs.map((text) => (
+            <p key={text}>{text}</p>
+          ))}
         </div>
 
-        <div className="about__data">
-          <div className="about__info">
-            <p className="about__description">
-              An Informatics Engineering graduate from Politeknik Negeri
-              Bandung with hands-on experience building applications from
-              planning and development through deployment. My experience comes
-              from academic projects, internships, part-time work, and
-              independent projects.
-            </p>
-            <p className="about__description">
-              I focus on clean, scalable code, thoughtful system performance,
-              and practical delivery. I adapt quickly to new technologies and
-              enjoy solving complex technical problems with a clear product
-              impact.
-            </p>
-
-            <div className="resume-buttons">
-              <button
-                className="btn btn-id"
-                onClick={() => downloadResume("id")}
-              >
-                Resume — Indonesian
-              </button>
-              <button
-                className="btn btn-en"
-                onClick={() => downloadResume("en")}
-              >
-                Resume — English
-              </button>
+        {cvs.length > 0 && (
+          <aside className="cv" aria-label="Resume">
+            <div className="cv__head">
+              <span className="cv__icon"><DocIcon /></span>
+              <div>
+                <h3>Resume</h3>
+                <p>Roles, projects and skills in one document.</p>
+              </div>
             </div>
-          </div>
-        </div>
+            <ul className="cv__list">
+              {cvs.map(([key, label]) => (
+                <li key={key}>
+                  <a className="cv__link" href={settings.cv[key]} target="_blank" rel="noreferrer">
+                    <span className="cv__lang">{label}</span>
+                    <span className="cv__meta mono">PDF</span>
+                    <span className="cv__dl"><DownloadIcon /></span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        )}
       </div>
-
-      <AboutBox />
     </section>
   );
 };

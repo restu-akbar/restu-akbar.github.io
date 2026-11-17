@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "restu-akbar",
+  "compatibility_date": "2026-11-01",
+  // The React build (run `yarn build` in the repo root first).
+  "pages_build_output_dir": "../../build",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "restu-akbar-cms",
+      "database_id": "408289e1-2758-4542-a79f-21c0b3b294bb"
+    }
+  ],
+  "r2_buckets": [
+    { "binding": "MEDIA", "bucket_name": "restu-akbar-media" }
+  ]
+}
