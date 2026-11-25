@@ -1,26 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap");
 
 :root {
-  --bg: #fbfaf7;
+  --bg: #ffffff;
+  --bg-2: #f6f9fc;
   --surface: #ffffff;
-  --ink: #16181a;
-  --muted: #5d625f;
-  --rule: #e6e3db;
-  --accent: #1e6b4e;
-  --accent-soft: rgba(30, 107, 78, 0.09);
+  --ink: #0b2447;
+  --body: #425466;
+  --muted: #6b7c93;
+  --rule: #e3e8ee;
+  --accent: #2f62f0;
+  --accent-ink: #1d47c8;
+  --accent-soft: #eef4ff;
+  --wash: radial-gradient(120% 90% at 100% 0%, #dcebff 0%, rgba(220, 235, 255, 0) 60%);
+  --grad: linear-gradient(135deg, #2f62f0, #2fb2f5);
+  --shadow: 0 1px 2px rgba(11, 36, 71, .05), 0 12px 28px -14px rgba(11, 36, 71, .2);
+  --shadow-ui: 0 50px 100px -20px rgba(11, 36, 71, .22), 0 30px 60px -30px rgba(0, 0, 0, .28);
+  --serif: "Geist", system-ui, sans-serif;
   --sans: "Geist", system-ui, sans-serif;
   --mono: "Geist Mono", ui-monospace, monospace;
-  --measure: 1040px;
+  --measure: 1180px;
 }
 
 [data-theme="dark"] {
-  --bg: #0f1211;
-  --surface: #151918;
-  --ink: #eceeed;
-  --muted: #9aa39e;
-  --rule: #242b28;
-  --accent: #5fd0a0;
-  --accent-soft: rgba(95, 208, 160, 0.1);
+  --bg: #071226;
+  --bg-2: #0b1a33;
+  --surface: #0e1f3b;
+  --ink: #eef3fb;
+  --body: #b3c0d4;
+  --muted: #8395b0;
+  --rule: #1c3054;
+  --accent: #4f9bff;
+  --accent-ink: #7fb5ff;
+  --accent-soft: rgba(79, 155, 255, .12);
+  --wash: radial-gradient(120% 90% at 100% 0%, rgba(47, 98, 240, .28) 0%, rgba(47, 98, 240, 0) 60%);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 28px -14px rgba(0, 0, 0, .6);
+  --shadow-ui: 0 50px 100px -20px rgba(0, 0, 0, .6);
 }
 
 * {
@@ -36,7 +50,7 @@ html {
 
 body {
   background: var(--bg);
-  color: var(--ink);
+  color: var(--body);
   font-family: var(--sans);
   font-size: 1rem;
   line-height: 1.65;
@@ -82,8 +96,11 @@ h1,
 h2,
 h3,
 h4 {
+  font-family: var(--serif);
+  color: var(--ink);
   font-weight: 600;
-  line-height: 1.15;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
 }
 
 ::selection {
@@ -104,7 +121,7 @@ h4 {
 }
 
 .section {
-  padding-block: 5.5rem 0;
+  padding-top: clamp(88px, 10vw, 130px);
 }
 
 .section__eyebrow {
@@ -113,12 +130,14 @@ h4 {
   font-family: var(--mono);
   font-size: 0.78rem;
   font-weight: 500;
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .section__title {
-  font-size: clamp(1.7rem, 3.6vw, 2.4rem);
-  letter-spacing: -0.025em;
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  letter-spacing: -0.02em;
   margin-bottom: 0.9rem;
   max-width: 22em;
 }
@@ -136,17 +155,17 @@ h4 {
 }
 
 .tag {
-  background: var(--accent-soft);
-  border-radius: 4px;
-  color: var(--accent);
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--ink);
   display: inline-block;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  padding: 0.12rem 0.5rem;
+  font-size: 0.82rem;
+  padding: 0.2rem 0.7rem;
 }
 
 .text-link {
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--accent);
   transition: border-color 150ms, color 150ms;
 }
 
@@ -156,32 +175,34 @@ h4 {
 }
 
 .btn {
-  background: var(--ink);
-  border: 1px solid var(--ink);
-  border-radius: 8px;
-  color: var(--bg);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 6px 16px -6px rgba(47, 98, 240, .55);
+  color: #fff;
   display: inline-block;
   font-size: 0.92rem;
   font-weight: 500;
-  padding: 0.65rem 1.15rem;
+  padding: 0.7rem 1.2rem;
   transition: background 150ms, color 150ms, border-color 150ms;
 }
 
 .btn:hover:not(:disabled) {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--bg);
+  background: var(--accent-ink);
+  border-color: var(--accent-ink);
+  color: #fff;
 }
 
 .btn--ghost {
   background: transparent;
   border-color: var(--rule);
+  box-shadow: none;
   color: var(--ink);
 }
 
 .btn--ghost:hover:not(:disabled) {
-  background: transparent;
-  border-color: var(--ink);
+  background: var(--bg-2);
+  border-color: var(--muted);
   color: var(--ink);
 }
 
@@ -193,4 +214,11 @@ h4 {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
+}
+
+.section:nth-of-type(even) {
+  background: var(--bg-2);
+  box-shadow: 0 0 0 100vmax var(--bg-2);
+  clip-path: inset(0 -100vmax);
+  padding-bottom: clamp(88px, 10vw, 130px);
 }

@@ -8,7 +8,7 @@ const Resume = () => {
 
   return (
     <section className="resume container section" id="resume">
-      <span className="section__eyebrow">03 · Experience</span>
+      <span className="section__eyebrow">Experience</span>
       <h2 className="section__title">Where I&apos;ve worked.</h2>
       <p className="section__intro">
         Roles where I built the features and also ran the infrastructure they

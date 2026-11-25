@@ -1,36 +1,40 @@
 .steps {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
 
 .step {
   background: var(--surface);
   border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: 1.25rem;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
 }
 
 .step__num {
   color: var(--accent);
+  font-family: var(--mono);
   display: block;
-  margin-bottom: 0.9rem;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .step h3 {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 .step p {
   color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.55;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .stack__title {
-  font-size: 1rem;
-  margin: 3rem 0 1rem;
+  font-size: 1.25rem;
+  margin: 4rem 0 1rem;
 }
 
 .skills {
@@ -57,16 +61,7 @@
   gap: 0.4rem;
 }
 
-@media (max-width: 960px) {
-  .steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: 560px) {
-  .steps {
-    grid-template-columns: 1fr;
-  }
 
   .skills__row {
     grid-template-columns: 1fr;

@@ -8,14 +8,14 @@ const Services = () => {
 
   return (
   <section className="services container section" id="approach">
-    <span className="section__eyebrow">01 · How I work</span>
+    <span className="section__eyebrow">How I work</span>
     <h2 className="section__title">{settings.approach.title}</h2>
     <p className="section__intro">{settings.approach.intro}</p>
 
     <ol className="steps">
       {steps.map(({ title, text }, i) => (
         <li className="step" key={title}>
-          <span className="step__num mono">0{i + 1}</span>
+          <span className="step__num">{i + 1}.</span>
           <h3>{title}</h3>
           <p>{text}</p>
         </li>

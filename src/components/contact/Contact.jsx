@@ -53,7 +53,7 @@ const Contact = (props) => {
 
     return (
         <section className="contact container section" id="contact">
-            <span className="section__eyebrow">05 · Contact</span>
+            <span className="section__eyebrow">Contact</span>
             <h2 className="section__title">Tell me what you&apos;re trying to solve.</h2>
 
             <div className="contact__container">

@@ -29,7 +29,7 @@ const About = () => {
 
   return (
     <section className="about container section" id="about">
-      <span className="section__eyebrow">04 · About</span>
+      <span className="section__eyebrow">About</span>
       <h2 className="section__title">A bit about me.</h2>
 
       <div className="about__body">

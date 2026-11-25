@@ -1,35 +1,35 @@
 .jobs {
-  border-left: 1px solid var(--rule);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
   display: grid;
-  gap: 2.5rem;
-  margin-left: 4px;
+  padding: 0 1.75rem;
+}
+
+.job + .job {
+  border-top: 1px solid var(--rule);
 }
 
 .job {
-  padding-left: 1.75rem;
-  position: relative;
+  display: grid;
+  gap: 0.5rem 2rem;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  padding: 1.75rem 0;
 }
 
-.job::before {
-  background: var(--bg);
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-  content: "";
-  height: 9px;
-  left: -5px;
-  position: absolute;
-  top: 0.45rem;
-  width: 9px;
+.job > *:not(.job__years) {
+  grid-column: 2;
 }
 
 .job__years {
   color: var(--accent);
-  margin-bottom: 0.3rem;
+  grid-row: 1 / span 2;
+  padding-top: 0.35rem;
 }
 
 .job__title {
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: 1.2rem;
   margin-bottom: 0.75rem;
 }
 
@@ -48,9 +48,21 @@
 
 .job__list li::before {
   color: var(--accent);
-  content: ">";
-  font-family: var(--mono);
-  font-size: 0.8rem;
+  content: "–";
   left: 0;
   position: absolute;
+}
+
+@media (max-width: 640px) {
+  .job {
+    grid-template-columns: 1fr;
+  }
+
+  .job > *:not(.job__years) {
+    grid-column: 1;
+  }
+
+  .job__years {
+    grid-row: auto;
+  }
 }
