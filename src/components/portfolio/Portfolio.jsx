@@ -75,7 +75,7 @@ const Portfolio = () => {
 
   return (
     <section className="portfolio container section" id="portfolio">
-      <span className="section__eyebrow">Selected work</span>
+      <span className="section__eyebrow">Selected projects</span>
       <h2 className="section__title">Systems I&apos;ve built and shipped.</h2>
       <p className="section__intro">
         Web, mobile and backend projects for campuses and companies, some live

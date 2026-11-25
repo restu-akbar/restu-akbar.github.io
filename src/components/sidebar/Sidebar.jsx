@@ -16,7 +16,7 @@ const SunIcon = () => (
 
 const links = [
   ["approach", "How I work"],
-  ["portfolio", "Work"],
+  ["portfolio", "Projects"],
   ["resume", "Experience"],
   ["about", "About"],
 ];

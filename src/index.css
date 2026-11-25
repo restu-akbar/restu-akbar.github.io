@@ -121,7 +121,7 @@ h4 {
 }
 
 .section {
-  padding-top: clamp(88px, 10vw, 130px);
+  padding-block: clamp(88px, 10vw, 130px);
 }
 
 .section__eyebrow {
@@ -220,5 +220,4 @@ h4 {
   background: var(--bg-2);
   box-shadow: 0 0 0 100vmax var(--bg-2);
   clip-path: inset(0 -100vmax);
-  padding-bottom: clamp(88px, 10vw, 130px);
 }
